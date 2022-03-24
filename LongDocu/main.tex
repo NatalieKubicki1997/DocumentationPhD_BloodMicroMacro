@@ -74,7 +74,7 @@ For a \textbf{Newtonian} fluid assumption the viscosity $\mu$ is kept constant.}
 
 \textit{"The principal unknowns are the velocity $\bm{u}$ and the pressure $P$, while the density $\rho$ is here constant. The term $\bm{f}$ in the right hand side accounts for the possible action of external forces, like gravity, and is often taken equal to zero in haemodynamics."}(Chapter 2)
 
-\paragraph{Boundary conditions and Initial conditions} \textit{"The equations have to be supplemented with boundary conditions on $\partial  \Omega$.
+\subsubsection*{Boundary conditions and Initial conditions} \textit{"The equations have to be supplemented with boundary conditions on $\partial  \Omega$.
 We typically prescribe a velocity profile at the proximal boundary $\Gamma$ in, that is the section closest to the heart along the direction of the mean blood flow, which we will also denote as inflow boundary, even if the term inflow in not completely correct since in some major vessels we can have flow reversals. We then prescribe zero velocity at the fixed walls and the normal stresses $\bm{T} \cdot \bm{n}$ at the distal boundaries $\Gamma_{out}$  (also called outflow boundaries). Again, the term distal is meant with respect to the heart.\newline\newline
 We need also to prescribe the initial status of the fluid velocity, for instance
 $\bm{u}(\bm{x}, 0) = \bm{u}_0(\bm{x}) \bm{x} \in \Omega$,
@@ -83,30 +83,30 @@ being $\bm{u}_0$ a given quantity. We recall that $\bm{u}_0$  cannot be arbitrar
 physically relevant initial condition. Therefore  $\bm{u}_0$ is usually chosen rather arbitrarily, often just equal to zero everywhere. It means that numerical computations may suffer a false transient linked to the incorrect initial data. If the boundary conditions are correct, however, it will decay quite rapidly.(...) A possibility to get a better guess of the initial data is to \textbf{solve a stationary Stokes problem}"}(Chapter 2) \newline\newline
 \textit{"The situation is worsened when the compliance of the wall is taken into
 account. The continuous exchange of energy between fluid and wall effectively makes the decay slower. In calculations of flow in compliant vessels it is normal practise to wait for at least three cardiac cycles before considering the influence of the initial data negligible"}(Chapter 2)
-\paragraph{Properties of equations}\textit{"The solution of the Navier-Stokes equations may develop instabilities,
+\subsubsection*{Properties of equations}\textit{"The solution of the Navier-Stokes equations may develop instabilities,
 which are normally called turbulence. The responsible is the dynamics induced sure the importance of this term compared with the diffusive part given by by the non-linear convection term $ \rho (\bm{u} \cdot \bm{\nabla})\bm{u}$. It is therefore natural to measure the importance of this term compared with the diffusive part given by $\bm{div}(\mu \bm{D}(\bm{u}))$. This information is provided by the Reynolds number.  \textbf{If the Reynolds number is small, say at most of the order of 1000, the flow remains stable, and is called laminar}. In normal physiological situations, then, the values of the Reynolds number reached in the cardiovascular system do not allow the formation of full scale turbulence. Some flow instabilities may occur only at the exit of the aortic valve and limited to the systolic phase. In this region the Reynolds number may reach the value of few thousands only for the portion of the cardiac cycle corresponding to the peak systolic velocity, however, there is not enough time for a full turbulent flow to develop. \textbf{When departing from physiological conditions, there are several factors that may induce transition from laminar to turbulent flows. For instance, the increase of flow velocity because of physical exercise, or due to the presence of a stenotic artery or a prosthetic implant such as a shunt, may produce an increase of the Reynolds number and lead to localised turbulence. Smaller values of blood viscosity also raise the Reynolds number}; "}(Chapter 2)
 \newline\newline \textit{"Knowing the velocity and the pressure fields allows the computation of the stresses, in particular the shear stresses to which an arterial wall is subjected  due to the blood movement. Wall shear stresses, are the force per unit area exerted by the
 fluid tangentially to the wall. We have already mentioned their importance in relation with some vascular diseases, since endothelium cells react to shear stresses.Irregular, and in particular small or \textbf{oscillating shear stresses} \textit{[Wall shear stress is considered to be oscillating when its component along the main flow direction changes sign during the heart beat. In normal situations the component of wall shear stress along the main flow is always negative. Oscillating shear stresses are usually found in recirculation regions.]} may cause an alteration in the endothelium covering and induce inflammatory processes. Their calculation require a point-wise knowledge of the velocity and pressure field! To account for the compliance of the vessel wall we need to introduce
 another unknown, namely the wall displacement $\bm{\eta}$"}(Chapter 2)
-\paragraph{FSI} \textit{Smaller vessels experience a smaller relative movement than larger ones, where the change of radius during the heart beat may be of the order of 15 percent , like in the aorta. Therefore, the flow in the peripheral vessels, lets say more than two branching levels down from the aorta, can be reasonably modelled using a fixed geometry. \textbf{An exception} being the coronaries, whose movement is however dominated by the heart movement more than the fluid-structure interaction in the vessel. The effect of heart movement in the shear stress distribution in a coronary artery has been investigated. It has been found that it can be relevant, particularly in vessels with high curvature. Even in the larger vessels, at least in physiological situations, the main
+\subsubsection*{FSI} \textit{Smaller vessels experience a smaller relative movement than larger ones, where the change of radius during the heart beat may be of the order of 15 percent , like in the aorta. Therefore, the flow in the peripheral vessels, lets say more than two branching levels down from the aorta, can be reasonably modelled using a fixed geometry. \textbf{An exception} being the coronaries, whose movement is however dominated by the heart movement more than the fluid-structure interaction in the vessel. The effect of heart movement in the shear stress distribution in a coronary artery has been investigated. It has been found that it can be relevant, particularly in vessels with high curvature. Even in the larger vessels, at least in physiological situations, the main
 characteristic of the flow are already captured by a fixed geometry model. \textbf{However, if more details are needed, such as a precise computation of shear stresses or the size of a recirculation region, then compliant models are better suited. Furthermore, if it is necessary to have an accurate description of pulse waves, for instance if one wants to investigate altered pressure pattern possibly caused by anomalous pulse wave reflections, like in the study of aortic aneurysms [285], then compliant models are mandatory}. The reason is that fixed geometry models simply cannot describe pulse waves: the propagation speed is here infinite because of the incompressible fluid. It is indeed the mechanical interaction between blood flow and vessel wall deformation that generates the pulse waves."}(Chapter 2)
-\paragraph{General} \textit{A clear major feature of blood flow is its pulsatility. It may induce flow
+\subsubsection*{General} \textit{A clear major feature of blood flow is its pulsatility. It may induce flow
 reversal and recirculations near the arterial wall, a phenomenon that can have negative effects on the endothelium and stimulate the deposit of lipids and atherosclerosis. The latter effect is more likely to occur in specific vascular districts, like the carotid bifurcation"}(Chapter 2) \newline\newline \textit{With some approximation one may think that blood flow is periodic in time. Yet, this can be considered true only for relatively short periods, since the various human activities require to change the amount of blood sent to the various organs. Also the elastic properties of arteries (especially the arterioles) may vary depending on the request of blood by the peripheral organs. Indeed one of the aspects of current research in computational haemodynamics is the interaction between blood flow and the metabolic regulation. It presents several challenges from the mathematical modelling and numerical side. For the sake of space and because only partial results are available so far this aspect has not been extensively covered in this book (see Chapter 10). In several early studies, however, blood computations were made \textbf{using
 steady flow. This can be considered acceptable in peripheral arteries, the capillary bed and in the veins,where the pulsatility of the flow is reduced thanks to the regularising effect of the compliance of the major arteries. In particular, micro-circulation is practically (but not completely) steady. The use of steady computations in larger vessels may again by justified by the lower computational cost.}}(Chapter 2)
 
-\paragraph{(Temperature} \textit{We mention that in some particular contexts, for instance in the hyperthermia treatment where some drugs are activated through an artificial localised increase in temperature (see [123, 219]), the variation of blood temperature may be relevant. Describing the evolution of temperature requires to introduce another partial differential equation which derives from the principle of energy conservation, and couple it with the Navier-Stokes equations. In large and medium sized vessel the coupling is weak, since here temperature variations have small influence in the flow field.[...] \textbf{Things are different in micro-circulation, where the combined effect of temperature on the blood apparent viscosity and on other mechanical properties of the vessel wall makes the situation more complex [178]. However, since in the physiological regime the temperature inside the human body is constant and the situations where temperature variations are relevant are rather special, we will not pursue this topic further in this book}\textbf{)}}(Chapter 2)
+\subsubsection*{(Temperature)} \textit{We mention that in some particular contexts, for instance in the hyperthermia treatment where some drugs are activated through an artificial localised increase in temperature (see [123, 219]), the variation of blood temperature may be relevant. Describing the evolution of temperature requires to introduce another partial differential equation which derives from the principle of energy conservation, and couple it with the Navier-Stokes equations. In large and medium sized vessel the coupling is weak, since here temperature variations have small influence in the flow field.[...] \textbf{Things are different in micro-circulation, where the combined effect of temperature on the blood apparent viscosity and on other mechanical properties of the vessel wall makes the situation more complex [178]. However, since in the physiological regime the temperature inside the human body is constant and the situations where temperature variations are relevant are rather special, we will not pursue this topic further in this book}\textbf{)}}(Chapter 2)
 
-\paragraph{Mathematical Derivation} \textbf{ALE} \textit{As already mentioned in Chapter 2, in many cases of practical interest in haemodynamics, such as blood flowing in a compliant artery, the computa- tional domain for the fluid cannot be fixed in time, as it has to follow the displacements of the fluid-wall. Yet, the Lagrangian frame is not of help here, since certainly we do not wish to follow the evolution of the blood particles as they circulate along the whole cardiovascular system! We usually wish to compute the flow field in a domain confined in the area of interest, yet following the movement of the wall interface. The computational domain, which we will now indicate with $\omega$(t), is neither fixed nor a material subdomain, since its evolution is not governed by the fluid motion, but has to comply by that of the boundary $\partial\omega$(t), which is either given or the result of the coupling with a structural model. It is then necessary to introduce another, intermediate, frame of reference, called Arbitrary Lagrangian Eulerian (ALE).}(Chapter 3)
+\subsubsection*{Mathematical Derivation} \textbf{ALE} \textit{As already mentioned in Chapter 2, in many cases of practical interest in haemodynamics, such as blood flowing in a compliant artery, the computa- tional domain for the fluid cannot be fixed in time, as it has to follow the displacements of the fluid-wall. Yet, the Lagrangian frame is not of help here, since certainly we do not wish to follow the evolution of the blood particles as they circulate along the whole cardiovascular system! We usually wish to compute the flow field in a domain confined in the area of interest, yet following the movement of the wall interface. The computational domain, which we will now indicate with $\omega$(t), is neither fixed nor a material subdomain, since its evolution is not governed by the fluid motion, but has to comply by that of the boundary $\partial\omega$(t), which is either given or the result of the coupling with a structural model. It is then necessary to introduce another, intermediate, frame of reference, called Arbitrary Lagrangian Eulerian (ALE).}
 
-\paragraph{Navier-Stokes Equations and Boundary conditions}
+\subsubsection*{Navier-Stokes Equations and Boundary conditions} see Derivation of NS-Eqs
 
-\paragraph{Chapter 4 is image processing}
-\paragraph{Chapter 5 key flow paramaters} \textit{Reynolds number,$Re_D$, is overall the pre-eminent parameter, both in determining the stability of a flow and the persistence of geometric influences downstream of a bend or other disturbance. The reduced velocity, $U_{red}$ is a more appropriate parameter than the Womersley number for unsteady flows where there are significant streamwise flow variations. The Dean number De is the dominant parameter used to characterise flow in bends; in tightly curved or helical bends other parameters in addition to De may be required.}(Chapter 5)
-\paragraph{Chapter 6 is rheology of blood - see section 2}
+\subsubsection*{Chapter 4 is image processing}
+\subsubsection*{Chapter 5 key flow paramaters} \textit{Reynolds number,$Re_D$, is overall the pre-eminent parameter, both in determining the stability of a flow and the persistence of geometric influences downstream of a bend or other disturbance. The reduced velocity, $U_{red}$ is a more appropriate parameter than the Womersley number for unsteady flows where there are significant streamwise flow variations. The Dean number De is the dominant parameter used to characterise flow in bends; in tightly curved or helical bends other parameters in addition to De may be required.}
+\subsubsection*{Chapter 6 is rheology of blood - see section 2}
 
 \newpage
 \subsection{Paper A heterogeneous multi-scale model for blood flow}
-\paragraph{Motivation for multiscale modeling}
+\subsubsection*{Motivation for multiscale modeling}
 
 \textit{"Blood flow on scales larger than 300$\mu$m is consistently modeled as a continuous fluid, as it is computationally more convenient because models no longer include the individual cell dynamics which greatly reduces the computational overhead.  {\color{blue}Continuous models either assume whole blood as a Newtonian fluid on larger scales or use a non-Newtonian blood viscosity model to approximate the departure of whole from the Newtonian description.  Non-Newtonian models describe the change in blood viscosity with a dependency either on shear rate like a power law fluid [22] or Carreau-Yasuda [2], or depends on yield stress like the Casson model [19]. \textbf{Since such models do not include the dynamics of the cells they may over estimate the transport behaviors which are a result of cell-cell collisions within whole blood suspensions}}. This may lead to an invalid description of particle diffusivities within whole blood."}
 
@@ -130,7 +130,7 @@ A benefit of such an HMM model applied to blood flow is that on the largest scal
 \subsection{Book Cardiovascular mathematics (Chapter 6)}
 \textit{Rheology is the science of the deformation and flow of materials. It deals with the theoretical concepts of kinematics, conservation laws and constitutive relations, describing the interrelation between force, deformation and flow [...]  The object of haemorheology is the application of rheology to the study of flow properties of blood and its formed elements [...] \newline Therefore, the mathematical and numerical study of powerful, yet simple, constitutive models that can capture the rheological response of blood over a range of flow conditions is ultimately recognised as an important tool for clinical diagnosis and therapeutic planning}
 
-\paragraph{Physical mechanisms behind the mechanical properties of blood}
+\subsubsection*{Physical mechanisms behind the mechanical properties of blood}
 
 \textit{Whole blood is a concentrated suspension of formed cellular elements that includes red blood cells (RBCs) or erythrocytes (40-45 percent), white blood cells (WBCs) or leukocytes (around 1 percent) and platelets or thrombocytes (55-60 percent).}
 
@@ -141,12 +141,12 @@ A benefit of such an HMM model applied to blood flow is that on the largest scal
 \end{enumerate}
 The formation and breakup of this 3D microstructure, as well as the elongation and recovery of red blood cells, contribute to bloods shear thinning, viscoelastic and thixotropic behaviour (here we refer to thixotropy as the dependence of the material properties on the time over which shear has been applied. This dependence is largely due to the finite time required for the three-dimensional structure of blood to form and break down.)}
 
-\paragraph{Low shear rate behaviour: aggregation and disaggregation of erythrocytes} \textit{In the presence of fibrinogen and globulins (two plasma proteins), erythrocytes have the ability to form a primary aggregate structure of rod shaped stacks of individual cells called rouleaux. \textbf{At very low shear rates the rouleaux align themselves in an end-to-side and side-to-side fashion and form a secondary structure} consisting of branched three-dimensional aggregates [...] For blood at rest, the three-dimensional structure formed by the RBCs
+\subsubsection*{Low shear rate behaviour: aggregation and disaggregation of erythrocytes} \textit{In the presence of fibrinogen and globulins (two plasma proteins), erythrocytes have the ability to form a primary aggregate structure of rod shaped stacks of individual cells called rouleaux. \textbf{At very low shear rates the rouleaux align themselves in an end-to-side and side-to-side fashion and form a secondary structure} consisting of branched three-dimensional aggregates [...] For blood at rest, the three-dimensional structure formed by the RBCs
 appears \textbf{solid-like, appearing to resist flow until a finite level of force is applied} [...] \newline When blood begins to flow, the solid-like structure breaks into three-dimensional networks of various sizes which appear to move as individual units and reach an equilibrium size for a fixed shear rate. Increases in shear rate lead to a reduction in equilibrium size and lower effective viscosity[...] \newline \newline 
 \textbf{The process of disaggregation under increasing shear is reversible}When the shear rate is quasi-statically stepped down to lower values, the individual cells form shorter chains, then longer rouleaux and eventually a 3-D microstructure \newline \newline 
 {\color{blue}\textbf{The finite time necessary for equilibrium of the structure to be reached (both during aggregation and disaggregation) is responsible for the thixotropic behaviour of blood at low shear rates} \newline The associated time constants are a function of shear rate. The equilibria are found to be reached more rapidly at higher shear rates and more gradually with lower shear rates}}
 
-\paragraph{High shear rate behaviour of whole blood: shear flow of dispersed erythrocytes}\textit{When blood is subjected to a constant shear rate ... the cells can be seen to rotate. With increasing shear rate, they rotate less and for shear rates above a value, they cease to rotate and remain aligned with the flow direction [...] (they) lose their biconcave shape, become fully elongated and are transformed into flat outstretched ellipsoids with major axes parallel to the flow direction. At this stage the collision of red cells only occurs when a more rapidly moving cell touches a slower one but there are no further interactions between the cells. \newline \newline 
+\subsubsection*{High shear rate behaviour of whole blood: shear flow of dispersed erythrocytes}\textit{When blood is subjected to a constant shear rate ... the cells can be seen to rotate. With increasing shear rate, they rotate less and for shear rates above a value, they cease to rotate and remain aligned with the flow direction [...] (they) lose their biconcave shape, become fully elongated and are transformed into flat outstretched ellipsoids with major axes parallel to the flow direction. At this stage the collision of red cells only occurs when a more rapidly moving cell touches a slower one but there are no further interactions between the cells. \newline \newline 
 {\color{blue}\textbf{The high deformability of erythrocytes is due to the absence of a nucleus, to the elastic and viscous properties of its membrane and also to geometric factors such as the shape, volume and membrane surface area}}}
 
 \subsubsection*{Material blood}
@@ -161,7 +161,7 @@ simple shear flow \begin{enumerate}
     \item Second normal stress coefficient
 \end{enumerate}}
 
-\paragraph{Thixotropic response}\textit{
+\subsubsection*{Thixotropic response}\textit{
 The formation of the three-dimensional microstructure and the alignment of the RBC are not instantaneous, which gives blood its thixotropic behaviour. [..] Outside of industrial applications, these definitions largely focus on the time dependence of rheological properties under fixed shear rate (e.g. viscosity, normal stress effects) arising from the finite time required for the breakdown and buildup in microstructure such as that just described for blood}
 
 
@@ -174,14 +174,14 @@ The formation of the three-dimensional microstructure and the alignment of the R
 \end{align}
 \textit{Here, $\bm{\tau}$ denotes the extra-stress tensor accounting for differences in behaviour from a purely inviscid, incompressible fluid. To close the system of equations, we require an equation relating the state of stress to the kinematic variables such as rate of deformation of fluid elements. These constitutive equations and the elaboration of macroscopic constitutive models suitable for blood flow under certain flow conditions are the primary subjects of this section.}
 
-\paragraph{Newtonian}\textit{ The simplest viscous fluid model is that due to Newton. On the assumption that the components of the extra-stress tensor are each linear isotropic functions of the components of the velocity gradient $\grad \bm{u} $, it may be shown that for an incompressible fluid
+\subsubsection*{Newtonian}\textit{ The simplest viscous fluid model is that due to Newton. On the assumption that the components of the extra-stress tensor are each linear isotropic functions of the components of the velocity gradient $\grad \bm{u} $, it may be shown that for an incompressible fluid
 \begin{equation}
     \bm{\tau}= 2\mu \bm{D}(\bm{u}))
 \end{equation}
 this leads to the well-known Navier-Stokes equations for an incompressible viscous fluid. \textbf{This set of equations is commonly used with some justification to describe blood flow in the heart and healthy arteries} Blood is nonetheless non-Newtonian and in the previous sections evidence has been presented to show that under certain experimental or physiological conditions is inadequate as a constitutive relation for blood.}\newline\newline
 \textit{ we first Discuss representative rheologically admissible constitutive equations with shear thinning viscosity, and then introduce the \textbf{Casson model}, a representative yield stress fluid}
 
-\paragraph{Reiner-Rivlin-Fluids}
+\subsubsection*{Reiner-Rivlin-Fluids}
 \textit{Without loss of generality (e.g. [15]), the most general incompressible constitutive model of the form $ \bm{\tau} = \bm{\tau}(\grad \bm{u})$ that respects invariance requirements
 \begin{equation}
     \bm{\tau }= \phi_1(I_2, I_3) D(u) + \phi_2(I_2,I_3)D(u)^2
@@ -193,7 +193,7 @@ where $I_2$ and $I_3$ are the second and third principal invariants of the rate 
 and trace is identically zero for divergence free velocity fields essential for incompressible fluids (isochoric motions). Incompressible fluids of the form (6.16) are typically called Reiner-Rivlin fluids. The behaviour of Reiner-Rivlin fluids with non-zero values of $\phi_2$ in simple shear does not match experimental results on real fluids [15]. In addition, the dependence on the value of $I_3$ is often considered negligible [15].
 }
 
-\paragraph{Generalized Newtonian Fluids}
+\subsubsection*{Generalized Newtonian Fluids}
 General form 
 \begin{equation}
     \tau = 2 \mu(I_2) D(u)
@@ -207,14 +207,14 @@ the \textbf{generalised Newtonian model} takes then useful form,
     \tau = 2 \mu(  \Dot{\gamma}) D(u)
 \end{equation}
 
-\paragraph{Power law model}\textit{A simple example of a generalised Newtonian fluid is that of the power-law fluid, which has viscosity function given by
+\subsubsection*{Power law model}\textit{A simple example of a generalised Newtonian fluid is that of the power-law fluid, which has viscosity function given by
 \begin{equation}
     \mu = k \Dot{\gamma}^{n-1}
 \end{equation}
 k being a positive constant and n a constant chosen to have a maximum value 1, leading to a monotonic decreasing function of shear rate (shear thinning fluid) when $n< 1$ and a constant viscosity (Newtonian) fluid when $n =1$. \textbf{One of the major advantages of this model is that it is possible to obtain numerous analytical solutions to the governing equations. Two major drawbacks of the power-law model for the shear thinning case are that the zero shear rate behaviours are unphysical and limit the range of shear rates over which the viscosity is unbounded and the asymptotic limit as $\Dot{\gamma}\longrightarrow \infty$ is zero}. {\color{red}Both these behaviours are unphysical and limit the range of shear rates over which the power-law model is reasonable for blood}
 }
 
-\paragraph{Extension of
+\subsubsection*{Extension of
 the power-law model from Walburn and Schneck}
 \textit{
 One of the more successful viscosity laws for blood is an extension of
@@ -229,7 +229,7 @@ k = C_1 exp(C_2H_t), \hspace{15pt} n=1-C_3H_t.
 They found an R-squared statistical increase from 62 percent to 88 percent when Ht was included in the power-law model in addition to shear rate. The statistical significance rose to nearly 91percent  when TPMA was also added. Walburn and Schneck attribute the two parameter model (6.21) to Sacks [441].
 }
 
-\paragraph{Quemada model} \textit{In 1978 Quemada [412] used a semi-phenomenological approach to develop a constitutive law suitable for concentrated disperse systems (such as blood) that had an apparent viscosity $\mu$ determined from
+\subsubsection*{Quemada model} \textit{In 1978 Quemada [412] used a semi-phenomenological approach to develop a constitutive law suitable for concentrated disperse systems (such as blood) that had an apparent viscosity $\mu$ determined from
 \begin{equation}
     \mu = \mu_f (1 -\frac{1}{2}\frac{k_0+k_{\infty}\sqrt{\Dot{\gamma}/\Dot{\gamma_C}}}{1+\sqrt{\Dot{\gamma}/\Dot{\gamma_C}}}\phi)^{-2}
 \end{equation}
@@ -238,7 +238,7 @@ where $\mu_F, \phi \hspace{4pt }and \Dot{\gamma_C}$ are the viscosity of the sus
 
 
 
-\paragraph{Cassons equation}
+\subsubsection*{Cassons equation}
 \begin{equation}
     \sqrt{\abs{\tau_{12}}}= \sqrt{K}\sqrt{\Dot{\gamma}}+\sqrt{\abs{\gamma_0}}
 \end{equation}
@@ -247,7 +247,7 @@ for the absolute value of the shear stress $\abs{\tau_{12}}$ as a function of th
 \textit{The controversy over the existence of a yield stress and the use of it as
 a material parameter were introduced in Section 6.3.4. Here, we briefly sum- marise some of the results obtained for these measurements, but caution that measurements of the yield stress are expected to be quite sensitive to the microstructure of the blood prior to yielding, which is in turn expected to be sensitive to both the shear rate history as well as time [338] (...) and confirmed the importance of the presence of fibrinogen for the magnitude of the yield stress. Also haematocrit levels had to exceed a criti- cal threshold (typically between 0.05 and 0.08) for there to be a measurable yield stress. Results in the literature for the yield stress of blood show it to be very small, however:(..)}
 
-\paragraph{Material parameters for blood in generalised Newtonian andCassonmodels}
+\subsubsection*{Material parameters for blood in generalised Newtonian andCassonmodels}
 see book
 \textit{As discussed earlier in this chapter, the material parameters of blood are
 quite sensitive to the state of blood constituents as well as temperature. The dependence on temperature has been found to be similar to water}
@@ -258,7 +258,7 @@ models that have been considered in the literature for the shear dependent visco
 \textit{As discussed earlier in this chapter, the material parameters of blood are
 quite sensitive to the state of blood constituents as well as temperature. The dependence on temperature has been found to be similar to water}
 
-\paragraph{ Viscoelastic and thixotropic models}
+\subsubsection*{Viscoelastic and thixotropic models}
  \textit{Experimental in vitro evidence for the viscoelastic behaviour of human blood and discussion of its connection with the storage and dissipation of energy during the distortion of the 3D microstrucure formed by the RBC at low shear rates abounds in the literature:}
 
 \textit{\textbf{A word of caution is in order at this point, however. A study of blood in sinusoidal flows in glass tubes by Federspiel and Cokelet in 1984 [143] using tube diameters, flow rate amplitudes and oscillation frequencies that attempted to mimic those in small arteries indicated that blood elasticity was effectively negligible in this flow regime. Differences with measurements made earlier by Thurston [503] were attributed to the larger shear rates in Federspiel and Cokelets work, and Thurstons work was suggested as being more applicable to venous flow or pathological low-flow rate flows than arterial flow}}
@@ -287,7 +287,7 @@ tensor $\bm{\tau_E}$ (represents the contri- bution to the extra-stress due to t
     \bm{\tau}= 2\mu \bm{D}(\bm{u})+\bm{\tau_E}
 \end{equation}
 
-{\color{red} \paragraph{Comparison of predictions of constitutive models with experimental data}}
+{\color{red} \subsubsection*{Comparison of predictions of constitutive models with experimental data}}
 \textit{In a study in 1980 by Easthope and Brooks (...) . The model of Walburn and Schneck resulted in the closest fit. The predictions of the Walburn and Schneck model have been compared with those of a Newtonian fluid, Casson model and Bingham model for laminar flow through a straight tube under flow conditions bearing some similarity to those that exist in the femoral artery by Rodkiewicz et al (..) . The Walburn and Schneck model was seen to give markedly different results from the other models in pulsatile flow and these were stated as being in conformity with some experimental results [289]. The authors noted that the constitutive model of Walburn and Schneck was developed for low shear rates, however, and was not valid for certain shear rate regimes seen in their pulsatile flow simulations}
 
 \textit{Details of a recent comparison between a Newtonian, Casson, power-law
@@ -328,14 +328,14 @@ of the yield stress is the presence of cells in the blood, particularly red cell
 
 
 
-\paragraph{\color{red}Casson fluid model} \textit{is a non-Newtonian fluid with yield stress, which is widely used for modeling blood flow in narrow arteries. Many researchers have used the Casson fluid model for mathematical modeling of blood flow in narrow arteries at low shear rates. It has been demonstrated by Blair [28] and Copley [29] that the Casson fluid model is adequate for the representation of the simple shear behavior of blood in narrow arteries. Casson examined the validity of the Casson fluid model in his studies pertaining to the flow characteristics of blood and reported that at low shear rates, the yield stress for blood is nonzero}
+\subsubsection*{\color{red}Casson fluid model} \textit{is a non-Newtonian fluid with yield stress, which is widely used for modeling blood flow in narrow arteries. Many researchers have used the Casson fluid model for mathematical modeling of blood flow in narrow arteries at low shear rates. It has been demonstrated by Blair [28] and Copley [29] that the Casson fluid model is adequate for the representation of the simple shear behavior of blood in narrow arteries. Casson examined the validity of the Casson fluid model in his studies pertaining to the flow characteristics of blood and reported that at low shear rates, the yield stress for blood is nonzero}
 
 \textit{The yield stress characteristic of blood seems to vanish or become negligible when hematocrit level falls below a critical value. Yield stress contributes to the blood clotting following injuries and subsequent healing, and may also contribute to the formation of blood clots (thrombosis) and vessel blockage in some pathological cases such as strokes. The magnitude of yield stress and its effect could be aggravated by certain diseased states related to the rheology of blood, like polycythemia vera, or the structure of blood vessels such as stenosis.}
 
-\paragraph{THIXOTROPY }\textit{The phenomenon of thixotropy in a liquid result from the microstructure of the liquid
+\subsubsection*{THIXOTROPY }\textit{The phenomenon of thixotropy in a liquid result from the microstructure of the liquid
 system. Thixotropy may be explained as a consequence of aggregation of suspended particles. If the suspension is at rest, the particle aggregation can form, whereas if the suspension is sheared, the weak physical bonds among particles are ruptured, and the network among them breaks down into separate aggregates that can disintegrate further into smaller fragments [40]. After some time at a given shear rate, a dynamic equilibrium is established between aggregate destruction and growth, and at higher shear rates, the equilibrium is shifted in the direction of greater dispersion. The relatively long time required for the microstructure to stabilize following a rapid change in the rate of flow makes blood thixotropy readily observable [...] At high shear rates, structural change occurs more rapidly than at low shear rates.}
 
-\paragraph{BLOOD VISCOSITY MEASUREMENT} \textit{Blood viscosity is mainly determined by the hematocrit and varies with the shear rate as a non-Newtonian fluid [44,} \newline\newline
+\subsubsection*{BLOOD VISCOSITY MEASUREMENT} \textit{Blood viscosity is mainly determined by the hematocrit and varies with the shear rate as a non-Newtonian fluid [44,} \newline\newline
 \textit{Lee et al. [54] studied the applicability of \textbf{two non-Newtonian constitutive models ({\color{red}Casson} and {\color{red}Herschel-Bulkley models}) in the determination of the blood viscosity and yield stress using a pressure-scanning microfluidic hemorheometer}. The present results were compared with the measurements through a precision rheometer (ARES2). For a Newtonian fluid (standard oil), the two constitutive models showed excellent agreement with a reference value and the measurement of ARES2. For human blood as a non-Newtonian fluid, both the Casson and Herschel-Bulkley models exhibited similar viscosity results over a range of shear rates and showed excellent agreement with the ARES2 results. The Herschel-Bulkley model yielded a slightly higher value than other results at low shear rates, which may be due to the relatively high value of the yield stress. The yield stress values for whole blood were 14.4 mPa for the Casson model and 32.5 mPa for the Herschel-Bulkley model, respectively. {\color{blue}\textbf{Thus, their study showed that the {\color{red}Casson model} would be better than the {\color{red}Herschel-Bulkley model} for representing the non-Newtonian characteristics of blood viscosity [54]}}.}
 
 \textit{Kang et al. presented the first experimental work on the viscosity measurement of adult zebrafish whole blood using a capillary pressure-driven microfluidic viscometer. After the device calibration with water, the viscosity measurement of human whole blood was performed and in good agreement with published data, demonstrating the reliability of the device. \textbf{{\color{red}Power law} and {\color{red}Carreau-Yasuda rheological} models were used to model the non-Newtonian behaviors of the human }and zebrafish blood [56].}
@@ -343,26 +343,26 @@ system. Thixotropy may be explained as a consequence of aggregation of suspended
 
 \textit{This result indicates that blood viscosity is likely to be more affected by blood cell particle numbers than by blood cell volume. Although this comparison has not been addressed in human clinical studies, a previous animal study demonstrated that the blood cell count had a stronger influence on blood viscosity than the hematocrit [57].}
 
-\paragraph{HEAT TRANSFER OF BLOOD FLOW}
+\subsubsection*{HEAT TRANSFER OF BLOOD FLOW}
 \textit{The effects of flow parameters namely Grashof number (Gr), Prandtl number (Pr), heat source parameter (N), Hartmann number (M) and decay parameter ($\lambda$) on the velocity and heat functions have been observed}
-\paragraph{CONCLUSION} \textit{In this paper, rheological characteristics of blood were studied. As referred to in previous work, blood is a complex fluid with non-Newtonian characteristics. It often represents a yield stress (viscoplasticity) and has a shear-thinning behavior and due to the pulsative nature of the blood flow, it shows a thixotropy treatment. Blood has four main determinants including plasma viscosity, hematocrit, red blood cell deformability, and temperature. Blood shows a Newtonian fluids character when it flows through larger diameter arteries at high shear rates, but it exhibits a remarkable non-Newtonian behavior when it flows through small diameter arteries at low shear rates. Despite the fact that thixotropy is a transient property, due to the pulsative nature of the blood flow the thixotropic effects may have long term impact on the blood circulation. It should be remarked that time dependent effects whether thixotropic or viscoelastic in nature, should be expected in blood flow due to the pulsatility of blood flow and the rapid change in the deformation conditions during blood circulation. Modeling of heat transfer in the body can be used in surgery, especially open-heart surgery, as well as in making artificial blood vessels.}
+\subsubsection*{CONCLUSION} \textit{In this paper, rheological characteristics of blood were studied. As referred to in previous work, blood is a complex fluid with non-Newtonian characteristics. It often represents a yield stress (viscoplasticity) and has a shear-thinning behavior and due to the pulsative nature of the blood flow, it shows a thixotropy treatment. Blood has four main determinants including plasma viscosity, hematocrit, red blood cell deformability, and temperature. Blood shows a Newtonian fluids character when it flows through larger diameter arteries at high shear rates, but it exhibits a remarkable non-Newtonian behavior when it flows through small diameter arteries at low shear rates. Despite the fact that thixotropy is a transient property, due to the pulsative nature of the blood flow the thixotropic effects may have long term impact on the blood circulation. It should be remarked that time dependent effects whether thixotropic or viscoelastic in nature, should be expected in blood flow due to the pulsatility of blood flow and the rapid change in the deformation conditions during blood circulation. Modeling of heat transfer in the body can be used in surgery, especially open-heart surgery, as well as in making artificial blood vessels.}
 \newpage
 \subsection{Paper Methods of Blood Flow Modelling}
 \subsubsection*{Hemorheology}
 \textit{ the science of deformation and flow of blood and its formed elements. This field includes investigations of both macroscopic blood properties using rheometric experiments as well as microscopic properties in vitro and in vivo. }
-\paragraph{Blood components} 
+\subsubsection*{Blood components} 
 \textit{Blood is a concentrated suspension of several formed cellular elements, red blood cells (RBCs or erythro-cytes), white blood cells (WBCs or leukocytes) and platelets (thrombocytes), in an aqueous polymeric and ionic solution, the plasma, composed of  water and particles, namely, electrolytes, organic
 molecules, numerous proteins (albumin, globulins and fibrinogen) and waste products.\newline [...] 
 Normal erythrocytes are biconcave discs with a mean
 diameter of 6 to 8 $\mu$m and a maximal thickness of 1.9 $\mu$m.}
 
 
-\paragraph{Non-Newtonian properties of blood} \textit{The mechanical properties of blood should be studied by considering a fluid containing a suspension of particles. A fluid is said to be Newtonian if it satisfies the Newtons law of viscosity (the shear stress is proportional to the rate of shear and the viscosity is the constant of proportionality). Blood plasma, which consists mostly of water, is a Newtonian fluid. However, the whole blood has complex mechanical properties which become particularly significant when the particles size is much larger, or at least comparable, with the lumen size. \textbf{In this case, which happens at the microcirculation level (in the small arterioles and capillaries) blood cannot be modelled has a homogeneous fluid and it is essential to consider it as a suspension of blood cells (specially RBCs) in plasma.}}
+\subsubsection*{Non-Newtonian properties of blood} \textit{The mechanical properties of blood should be studied by considering a fluid containing a suspension of particles. A fluid is said to be Newtonian if it satisfies the Newtons law of viscosity (the shear stress is proportional to the rate of shear and the viscosity is the constant of proportionality). Blood plasma, which consists mostly of water, is a Newtonian fluid. However, the whole blood has complex mechanical properties which become particularly significant when the particles size is much larger, or at least comparable, with the lumen size. \textbf{In this case, which happens at the microcirculation level (in the small arterioles and capillaries) blood cannot be modelled has a homogeneous fluid and it is essential to consider it as a suspension of blood cells (specially RBCs) in plasma.}}
 
 \textit{Otherwise, depending on the size of the blood vessels and the flow behaviour, it is approximated as a
 Navier-Stokes fluid or as a non-Newtonian fluid.{\color{blue}\textbf{ Here we assume that all macroscopic length and time scales are sufficiently large compared to length and time scales at the level of the individual erythrocyte so that the continuum hypothesis holds.}} }
 
-\paragraph{Viscosity of blood}
+\subsubsection*{Viscosity of blood}
 \textit{\textbf{In general blood has higher viscosity than plasma, and when the hematocrit rises, the viscosity of the suspension increases and the non-Newtonian behaviour of blood becomes more relevant, in particular at {\color{blue}very low shear rates}}. The apparent viscosity increases slowly until a shear rate less than 1 s-1
 where it rises markedly. The reason for this is that at low shear rates the erythrocytes have the ability to form a primary aggregate structure of rod shaped stacks of individual cells called \textbf{rouleaux}, that align to each other and form a secondary structure consisting of branched three-dimensional (3D) aggregates [118]. It has been experimentally observed that rouleaux will not form if the erythrocytes have been hardened or in the absence of fibrinogen and globulins (plasma proteins) [30]. (In fact, suspensions of erythrocytes in plasma demonstrate a strong non-Newtonian behaviour whereas when they are in suspension in physiological saline (with no fibrinogen or globulins) the behaviour of the fluid is Newtonian). For standing blood subjected to a shear stress lower than a critical value, these 3D structures can form and blood exhibits yield stress and resists to flow until a certain force is applied. This can happen only if the hematocrit is high enough.}
 
@@ -376,7 +376,7 @@ are influenced by their tendency to align and form layers in the flow, as well a
 \textbf{\textit{As a consequence of this behaviour we can say that one of the non-Newtonian characteristics of blood
 is the shear thinning viscosity. This happens in small size vessels or in regions of stable recirculation, like in the venous system and parts of the arterial vasculature where geometry has been altered and RBC aggregates become more stable, like downstream a stenosis or inside a saccular aneurysm. However, in most parts of the arterial system, blood flow is Newtonian in normal physiological conditions}}
 
-\paragraph{Constitutive Models}
+\subsubsection*{Constitutive Models}
 
 \textit{{\color{red}Simplest constitutive
 model for \textbf{incompressible viscous fluids based on the assumption that the extra stress tensor is proportional to the symmetric part of the velocity gradient}}}\begin{equation}
@@ -475,7 +475,7 @@ where $\lambda_1$ is the relaxation time and $\frac{\partial \cdot}{\partial t}$
 \textit{Another important property of blood is its \textbf{thixotropic behaviour}, essentially due to the fact that the formation of the three-dimensional microstructure and the alignment of the RBCs are not instantaneous. Essentially, we refer to thixotropy as the dependence of the material properties on the time over which shear has been applied. This dependence is due to the finite time required for the build-up and breakdown of the 3D microstructure, elongation and recovery of RBCs and the formation and breakdown of layers of the aligned RBCs [13]}
 
 
-\paragraph{Yield stress of blood} \textit{The behaviour of many fluids at low shear stress, including blood, has led researchers to believe in the existence of a critical value of stress below which the fluid will not flow. This critical stress level, called the yield value or yield, is typically treated as a constant material property of the fluid. [...] Reported values for the yield stress of blood have a great variation ranging from 0.002 to 0.40 dynes/c$m^2$ (...) \textbf{Rather than treating the yield stress as a constant, it should be considered as a function of time and linked to thixotropy, as later proposed by other researchers [89].}}
+\subsubsection*{Yield stress of blood} \textit{The behaviour of many fluids at low shear stress, including blood, has led researchers to believe in the existence of a critical value of stress below which the fluid will not flow. This critical stress level, called the yield value or yield, is typically treated as a constant material property of the fluid. [...] Reported values for the yield stress of blood have a great variation ranging from 0.002 to 0.40 dynes/c$m^2$ (...) \textbf{Rather than treating the yield stress as a constant, it should be considered as a function of time and linked to thixotropy, as later proposed by other researchers [89].}}
 
 \textit{{\color{blue}\textbf{Yield stress models can be useful to model blood flow in low shear rate regions}}. Yield stress materials
 require a finite shear stress $\tau_Y$ (the yield stress) to start flowing. A relatively simple, and physically relevant yield criterion is given by \begin{equation}
@@ -507,7 +507,7 @@ where $\mu_F, \phi \hspace{4pt }and \Dot{\gamma_C}$ are the viscosity of the sus
 \newpage
 \subsection{Paper Recent advances in blood rheology: a review}
 
-\paragraph{Introduction}
+\subsubsection*{Introduction}
 \textit{Experimentally, blood has been confirmed to demonstrate a variety of non-Newtonian rheological characteristics, including pseudoplasticity, viscoelasticity, and thixotropy. New rheological experiments and the development of more controlled experimental protocols on more extensive, broadly physiologically characterized, human blood samples demonstrate the sensitivity of aspects of hemorheology to several physiological factors. For example, at high shear rates the red blood cells elastically deform, imparting viscoelasticity, while at low shear rates, they form rouleaux structures that impart additional, thixotropic behavior.}
 
 \textit{As the volume fraction of RBCs (hematocrit) by far exceeds that of any other component (see also Table 1), it is common to consider blood as a suspension of flexible RBCs in an otherwise Newtonian fluid, as will be discussed. Complex interactions between RBCs result in aggregates (rouleaux) that can grow to form a temporary network at low shear rates,5 which results in a significantly complex rheological behavior}
@@ -519,7 +519,7 @@ thixotropy . see, for example, a recent review2 and references therein}
 
 \textit{Models derived from these advances range from simpler, generalized Newtonian, approaches, suitable mostly for steady-state shear-dominated flows, to thixotropic, elastoviscoplastic models, appropriate to study bloods complex transient rheological behavior. The emphasis of this review is continuum models to describe bulk blood rheology, although important connections to microscopic and multiscale models are also mentioned}
 
-\paragraph{Hemorheology characteristics}
+\subsubsection*{Hemorheology characteristics}
 \textit{most obvious non-Newtonian characteristic of blood rheology is its shear thinning in steady shear flow (...) However, with time, people discovered that blood rheology exhibits additional more complex rheological characteristics, including viscoplasticity, viscoelasticity and thixotropy. }
 
 \textit{TABLE with various quantities that can be used to characterize various aspects of hemorheology, such as various measures for limiting values (at zero and high shear rates) of blood viscosity, and its contribution from plasma and rouleaux, characterizing shear thinning, yield stress characterizing viscoplasticity, and three typical characteristic times useful to characterize two separate components of viscoelasticity (originating from the free RBC deformation, rouleaux aggregates) and thixotropy associated with rouleaux formation due to Brownian motion.}
@@ -535,10 +535,10 @@ reported in an (overly) simplified manner by a few characteristic metrics. One s
 tend to be the hematocrit and the fibrinogen concentration, with the latter affecting the aggregation tendency of the rouleaux. Various authors suggest that the low shear behavior of blood is dependent on both these parameters, with aggregation occurring only above a certain critical hematocrit}
 
 
-\paragraph{Experimental methods
+\subsubsection*{Experimental methods
 Rheometry}...
 
-\paragraph{Constitutive blood modeling}
+\subsubsection*{Constitutive blood modeling}
 
 {\color{blue}
 \textbf{\textit{ From the four non-Newtonian characteristics of blood rheology,
@@ -566,7 +566,7 @@ state shear viscosity.13,52}
 
 
 
-\paragraph{Thixotropic/elastoviscoplastic models for blood}
+\subsubsection*{Thixotropic/elastoviscoplastic models for blood}
 \textit{Generalized Newtonian models are computationally inexpensive to implement but cannot predict accurately transient (thixotropic/ hysteretic) changes in the viscosity which are relevant as blood flows naturally under pulsatile conditions. To better account for the transient effects, a viscoelastic model can be used}
 
 \textit{One example of this is the Anand-Kwack-Masud (AKM) model which is a generalization of the Oldroyd-B model
@@ -591,7 +591,7 @@ the Horner-Armstrong-Wagner-Beris (HAWB) model52 which uses this approach to des
 multiphase non-Newtonian pulsatile flow in a  tapered elastic duct with the terminal side and/or small  branches.The pulsatile flow is an unsteady  flow  in which resultant flow is  composed  of  a mean and  a periodically varying time-dependent component. Pulsatile flow  is responsible  for submissive effect  on  time-dependent viscoelastic and thixotropy behavior of  blood}
 
 
-\paragraph{Blood composition and  structure}\textit{Blood composition  and structure play a vital role in blood  rheology. Blood consists of a suspension of  elastic particulate cells  in  a liquid known as plasma (..) Potential non-Newtonian properties of plasma  were considerable debate until the early 1960 (Zydney  et al., 1991), but  recent  studies have demonstrated  that plasma is  a Newtonian  fluid with  a viscosity which is a  function of temperature}
+\subsubsection*{Blood composition and  structure}\textit{Blood composition  and structure play a vital role in blood  rheology. Blood consists of a suspension of  elastic particulate cells  in  a liquid known as plasma (..) Potential non-Newtonian properties of plasma  were considerable debate until the early 1960 (Zydney  et al., 1991), but  recent  studies have demonstrated  that plasma is  a Newtonian  fluid with  a viscosity which is a  function of temperature}
 
 \textit{The aggregatable and  deformable nature of the red RBCs
 plays significant roles in blood rheology. RBC aggregation causes a large increase in  viscosity at low shear rates. The size of RBC aggregation is a  function  of  RBC  concen- tration and shear rate (Zydney  et al., 1991).  The existence of aggregation also depends  on  the presence of fibrinogen and  globulin proteins in plasma (Fung,  1993). When  shear rate tends to  zero,  RBCs become  one big aggregate,  which then  behaves like  a solid. As  the shear  rate increases, RBCs aggregates  tend to be  broken  up and the  structure becomes a suspension of a  cluster of  RBCs aggregates in  plasma. These aggregates are  in turn formed  from smaller  units called rouleaux as shown. As the shear rate more  increases,  the average number of  RBCs  in each rouleaux  decreases. If the shear rate is larger than a certain  critical value,  the rouleaux are  broken up  into indi- vidual cells. At subcritical shear rates, the  RBCs  in each rouleaux maintain  their rest-state equilibrium  shape, bicon- cave discoid shape.  If the  shear rate is  supercritical, the RBCs  are dispersed in plasma separately  and tend to become  elongated  and line up with the streamlines  (see}
@@ -602,12 +602,12 @@ plays significant roles in blood rheology. RBC aggregation causes a large increa
 the physiological flow conditions of  blood and the
 blood composition  properties  such as hematocrit, temper- ature, shear rate,  cell aggregation,  cell shape, cell defor- mation and orientation. All of  these observed dependencies should be formulated  and  then systematically introduced into some  blood viscosity models for use in CFD analysis of blood flow. The review of the present viscosity models discussed in the following section however showed that; the  effects of  cell aggregation, cell shape,  cell deformation, and cell orientation have not  clearly reflected in the vis- cosity  models, although these  models considers  the effects of  hematocrit  or cell concentration, shear rate, and tem- perature.  However, numerical studies on  RBC behaviors give a  hope for  transferring available  knowledge of micro- scopic hemodynamic and hemorheological behaviors to a blood viscosity mode}
 
-\paragraph{Blood viscosity  models}
+\subsubsection*{Blood viscosity  models}
 \textit{Experimental investigations over many years showed that blood flow exhibits non-Newtonian behavior such  as shear thinning, thixotropy, viscoelasticity, and yield stress. Its  rheology is influenced by many factors  including plasma viscosity (Baskurt and Meiselman, 2003),  align- ment of  RBCs  (Baskurt  and Meiselman, 1977), level of RBC aggregation and deformability (Chien,  1970),  fibrin- ogen (Chien  et al, 1970), flow  geometry and size (Thurston and Henderson, 2006), rate of shear, hematocrit, male  or female, smoker  or non-smoker, temperature,  lipid loading, hypocaloric diet, cholesterol  level,  physical fitness  index (Cho  and Kensey, 1991), diabetes mellitus, arterial hyper- tension, sepsis (Meiselman and  Baskurt, 2006),  etc. The blood  viscosity  models in literature may however be dis- cussed in two main categories namely;\newline
 \textbf{Newtonian viscosity models} and \textbf{non-Newtonian viscosity models}}
 
 
-\paragraph{Newtonian viscosity models}\textit{The  blood behaves like a Newtonian  fluid when shear
+\subsubsection*{Newtonian viscosity models}\textit{The  blood behaves like a Newtonian  fluid when shear
 rate over a limiting value. This apparent  limiting viscosity or shear rate is a function of  the blood  composition, and  is primarily modulated by hematocrit (...)  blood was modeled as a Newtonian fluid in some studies by accepting the viscosity of blood to be constant and equal to the blood viscosity (...) However, a considerable 
 amount  of attempts has been developed for estimating Newtonian visscosity of whole blood as a  function of cell concentration - \textbf{concentration dependent
 Newtonian models} (table given) - (...) n later devel- opments, interactions  between  particles have been  included by  adding a quadratic terms and the particle shape have been included}
@@ -616,7 +616,7 @@ Newtonian models} (table given) - (...) n later devel- opments, interactions  be
 (Quemada, 1978;  Wildemuth and Williams,
 1984; Snabre and  Mills, 1996)  and by  using the differential developing effective medium approach (Pal, 2003).}
 
-\paragraph{Non-Newtonian viscosity models}
+\subsubsection*{Non-Newtonian viscosity models}
 \textit{The instantaneous shear  rate  over  a cardiac cycle  varies from zero to  approximately 1000 s-1 in several large arteries  (Cho  and Kensey,  1991). Therefore, over a  cardiac cycle, there are  time periods where the blood exhibits shear thinning  behavior. In addition  to low  shear time  periods, low shear exists in some  regions such as near bifurcations, graft anastomoses, stenoses, and  aneurysm}
 
 
@@ -637,7 +637,7 @@ models are based  on  experimental data obtaining the result- ing  shear stress 
 
 
 
-\paragraph{Time independent  viscosity models}
+\subsubsection*{Time independent  viscosity models}
 \textit{show shear  thinning behavior and must  meet  the following  model 
 requirements: There are three  distinct
 regions  for apparent blood viscosity:
@@ -661,7 +661,7 @@ model in that shear  rate should be  Weaver  model ... different results}
 \textbf{TABLE WITH MANY TIME INDEPENDENT MODELS}
 
 
-\paragraph{Time dependent viscosity  models}
+\subsubsection*{Time dependent viscosity  models}
 \textit{Time-dependent models are used to describe  thixotropic
 and  viscoelastic behavior. Thixotropy  is  a special condition of pseudo plasticity with or without yield stress, where the apparent viscosity also decreases when the fluid is subjected to a constant  shear rate. 
  Blood is a  concentrated sus- pension of cells.  Most  of concentrated suspension system exhibits thixotropic behavior. Experimental results of whole human blood  have  demonstrated that blood is a exhibits thixotropic behavior. ...the hematocrit, gender and age  are factors  affecting  the blood thixotropy}
@@ -693,16 +693,16 @@ most  of the CFD studies. At low shear rates, RBCs aggregate are solid-like bodi
 Different models e.g. Oldroyd-B Model, Yeleswarapu Model, Generalized Oldroyd-B Model (Rajagopal and Srin- ivasa, 2000), Generalized Maxwell Model (Rajagopal and Srin- ivasa, 2000), Generalized Oldroyd-B Model (Anand and Rajago- pal, 2004), Generalized Maxwell Model (Owens,  2006):
 
 
-\paragraph{Yield stress of blood}
+\subsubsection*{Yield stress of blood}
 \textit{The yield  stress of blood can  be taken  into  account in  the
 regions of low shear rates like thixotropic and viscoelastic behavior of blood.  It can supply better  understanding  of aggregation  and  deformation of blood cells. The  relation of cell deformation and aggregation with yield stress was described as}
 
-\paragraph{Physiological conditons}
+\subsubsection*{Physiological conditons}
 \textit{The cyclic nature  of the  heart  pump creates  pulsatile con-
 ditions in arteries, and therefore blood flow and  pressure are unsteady. The pulsations of  flow  are damped in the small vessels, and the  flow is so effectively  steady in  the capillaries and the veins.  The arteries are not rigid tubes. It adapts to varying flow and pressure  conditions  by  enlarg- ing or shrinking. All of these  physiologic conditions and others cause difficulties to  render simulations  both con- ceptually and computationally tractable. As a result, most CFD  models of arterial  hemodynamics need  to make  the simplifying assumptions of  rigid walls, steady flow, fully developed  inlet velocities, Newtonian rheology,  normal and  periodic flow conditions, ignoring of small side or ter- minal  branches, using  of  idealized or averaged artery  mod- els, and using of in vitro  experiments to validate CFD models (Steinman, 2002; Steinman,  2004; Steinman and Taylor, 2005)}
 
 
- \paragraph{Conclusion}
+ \subsubsection*{Conclusion}
 \textit{Although there has been  the considerable amount of viscosity models in blood  rheology, none of them  has been commonly agreed upon or used. None of the models is fully expressing the effects of extremely complicated nature of blood  rheology and  its  depen- dence of many factors. The groovy method used for obtaining the existing viscosity models is  the para- metric curve fitting on experimental apparent  viscos- ity versus shear rate  data,  although the  blood con- stitutive parameters in these models have been found to be  related to internal  structures of the blood such  as RBC aggregation, RBC deformability,  etc. The dependency of blood  viscosity on each rheological property of the  blood should  be investigated and  clar- ified separately  by  means of  isolating the effects of remaining rheological properties.}
 
 
@@ -718,7 +718,7 @@ ditions in arteries, and therefore blood flow and  pressure are unsteady. The pu
 
 \subsection{Cardiovascular mathematics Chapter 3}
 
-\paragraph{Momentum equation}
+\subsubsection*{Momentum equation}
 \textit{The conservation of (linear) momentum is in fact the well known \textbf{Newtons law}. The rate of change of the momentum of a material domain $V(t)$, given by $\int_{V(t)} \rho \bf{u} d\bf{x} $ equals the resultant of the external forces acting on it, that is \begin{equation}
    \frac{d}{dt} \int_{V(t)} \rho \bf{u} d\bf{x} = \bm{F} = \bm{F_v} + \bm{F_s}
 \end{equation}
@@ -773,7 +773,7 @@ the \bf{shear stress vector}.
 have been here written in Eulerian formulation
 }
 
-\paragraph{Fluids and Solids - Definition of Cauchy stress tensor!} \textit{We need now to make precise how the Cauchy stress tensor is linked to the kinematics. It is indeed at this point where the behaviour of solids and fluids diverges- As solids react to deformations, the Cauchy stress must depend on the deformation gradient $\bm{\Tilde{F}}$. 
+\subsubsection*{Fluids and Solids - Definition of Cauchy stress tensor!} \textit{We need now to make precise how the Cauchy stress tensor is linked to the kinematics. It is indeed at this point where the behaviour of solids and fluids diverges- As solids react to deformations, the Cauchy stress must depend on the deformation gradient $\bm{\Tilde{F}}$. 
 Fluids instead can adapt to a deformation, as a fluid can fill freely any
 arbitrary shape. Yet it takes time to fill it. And oil takes more time than water. It means that fluids react mechanically not to the deformation itself but to its rate. More precisely, the relevant quantity is here the strain rate tensor $\bm{D}$ defined in (2.2) of Chapter 2, and whose dimensions are [$\bm{D}$ ]= $s^{-1}$. Componentwise, the strain rate reads}(Chapter 3) 
 \begin{equation}
@@ -782,7 +782,7 @@ arbitrary shape. Yet it takes time to fill it. And oil takes more time than wate
 As in one of the videos the strain rate tensor corrsponds to the symmetric part of velocity gradient tensor
 \textit{\textbf{In a fluid then  the cauchy stress tensor is a function of $\bm{D}$, while it is independent of  deformation gradient $\bm{F}$. A consequence is that the reference configuration is a concept useful for the derivation of the equations, yet it does not play any particular role for a fluid. Intermediate behaviours, like that of visco-elastic fluids, for instance, are possible; they will be addressed in detail in Chapter 6.} The relation between the Cauchy stress tensor $\bm{\sigma}$ and the kinematic quantities is called constitutive relation, or constitutive law, and is a characteristic of the type of material under consideration. To be physically correct, a constitutive relation must obey certain rules, like the principle of material frame indifference [512] which states that the relation should be invariant under a change of frame of reference.}(Chapter 3)
 
-\paragraph{Newtonian and Non-Newtonian}
+\subsubsection*{Newtonian and Non-Newtonian}
 \textit{ In a Newtonian incompressible fluid (this is a limitation usually accepted for blood flow in large arteries), the Cauchy stress tensor depends
 linearly on the strain rate. More precisely, we have \begin{equation}
     \bm{\sigma} = \bm{\sigma}(\grad\bm{u},P)= -P\bm{I} +2\mu\bm{D}(\grad\bm{u})= -P\bm{I} + \mu(\grad\bm{u}+\grad\bm{u}^T)
@@ -840,7 +840,7 @@ regarded as a Newtonian fluid to model blood flow in arteries with diameters lar
 {\color{red} What are our regions of interest?} \newline \textit{"A simple model of a straight rigid blood vessel with unsteady periodic flow is considered. A numerical solution that considers the fully coupled Navier Stokes and energy equations is used for the simulations"}(A review on rheology of non-Newtonian properties of blood) \newline
 {\color{red}Heat transfer?}
 {\color{red} Are we looking for these kind of phenomena?}
-    \item Rather genereal queation:((\textit{"At a macroscopic level, the arterial wall is a complex multi-layer structure which deforms under the action of blood flow. Even though sophisticated constitutive equations have been proposed for the structural behaviour of the vessel wall, its elastic characteristics in vivo are still very difficult to determine and are usually inferred from pulse propagation data. The modelling of the interaction between blood flow and the vessel wall mechanics needs algorithms which correctly describe the energy transfer between them to accurately represent wave propagation phenomena." (Preface Book Cardiovascular mathematics)} \newline
+    \item Rather genereal question:((\textit{"At a macroscopic level, the arterial wall is a complex multi-layer structure which deforms under the action of blood flow. Even though sophisticated constitutive equations have been proposed for the structural behaviour of the vessel wall, its elastic characteristics in vivo are still very difficult to determine and are usually inferred from pulse propagation data. The modelling of the interaction between blood flow and the vessel wall mechanics needs algorithms which correctly describe the energy transfer between them to accurately represent wave propagation phenomena." (Preface Book Cardiovascular mathematics)} \newline
     {\color{red}How far is the development of Trilions FSI-code?} ))
 \end{itemize}
 
