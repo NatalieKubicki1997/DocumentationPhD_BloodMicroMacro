@@ -668,14 +668,13 @@ and  viscoelastic behavior. Thixotropy  is  a special condition of pseudo plasti
  
  \textit{Chen  et al., 1 991;  Huang  et al., 1987b). Huang developed a generalized  rheological equation for thixotropic fluids. Huang model parameters were calculated from experimental data by non-linear parameter estimation technique for  apparently healthy  human subjects}
 
-\textbf{TABLE WITH 4 TIME-DEPENDENT THIXOTROPIC MODELS}
-Huang model, Weltman Model, Tiu-Boger Model, Rosen Model 
+\textbf{TABLE WITH 4 TIME-DEPENDENT THIXOTROPIC MODELS}\newline
+{\color{red}\textbf{Huang model, Weltman Model, Tiu-Boger Model, Rosen Model }}
 
 
-\textit{n literature, viscous models obtained at steady state  con- ditions were used under pulsatile flow conditions. These models have  provided  a great deal  of insight  into the  non- Newtonian viscous behavior of blood. However,  blood exhibits both viscous and elastic  properties under pulsatile flow }
+\textit{In literature, viscous models obtained at steady state  con- ditions were used under pulsatile flow conditions. These models have  provided  a great deal  of insight  into the  non- Newtonian viscous behavior of blood. However,  blood exhibits both viscous and elastic  properties under pulsatile flow }
 
-\textbf{
-\textit{Viscosity  is  an assessment  of the rate of energy dissipation due to cell deformation and sliding, while elasticity is an assessment of  the elastic  storage of  energy  primarily due to kinetic deformability of the RBCs}}
+\textbf{\textit{Viscosity  is  an assessment  of the rate of energy dissipation due to cell deformation and sliding, while elasticity is an assessment of  the elastic  storage of  energy  primarily due to kinetic deformability of the RBCs}}
 
 
 \textit{There are  two dimensionless numbers to measure of the tendency of a material to  appear either viscous or  elastic; the  Deb-orah number and the  Weissenberg number. The Deborah number is the  ratio of the relaxation time to  the characteristic time of the flow $De= \Theta_r/ T_c$, with The relaxation time can  be defined as  a ratio of the viscosity to elatisity $\Theta_r=\mu/G$. Three ranges  of Deborah  number  are  identified as that; if
@@ -690,12 +689,27 @@ most  of the CFD studies. At low shear rates, RBCs aggregate are solid-like bodi
  
  \textit{The extra stress tensor is used to characterize the viscoelastic stress in viscoelastic models. The total stress tensor (Cauchy stress tensor) is defined in terms of the pressure (P) and the  extra stress tensor (S). $\bm{\sigma}= -P\bm{I+ \bm{S}}$}
 
-Different models e.g. Oldroyd-B Model, Yeleswarapu Model, Generalized Oldroyd-B Model (Rajagopal and Srin- ivasa, 2000), Generalized Maxwell Model (Rajagopal and Srin- ivasa, 2000), Generalized Oldroyd-B Model (Anand and Rajago- pal, 2004), Generalized Maxwell Model (Owens,  2006):
-
+\textbf{Different models for capturing viscoelastic properties of blood:}\newline
+{\color{red} \begin{enumerate}
+\item \textbf{Oldroyd-B Model}
+\item \textbf{Yeleswarapu Model}
+\item \textbf{Generalized Oldroyd-B Model} (Rajagopal and Srin- ivasa, 2000)
+\item \textbf{Generalized Maxwell Model} (Rajagopal and Srin- ivasa, 2000)
+\item \textbf{Generalized Oldroyd-B Model}  (Anand and Rajago- pal, 2004) \textit{All of the Rajagopal models have a thermodynamic basis
+and  generalized Oldroyd-B models of Rajogopal are not capable of an instantaneous elastic response}
+\item \textbf{Generalized Maxwell Model}  (Owens,  2006)
+\end{enumerate} 
+}
 
 \subsubsection*{Yield stress of blood}
 \textit{The yield  stress of blood can  be taken  into  account in  the
 regions of low shear rates like thixotropic and viscoelastic behavior of blood.  It can supply better  understanding  of aggregation  and  deformation of blood cells. The  relation of cell deformation and aggregation with yield stress was described as}
+
+Formulas for yield stress
+
+\textit{Accurately and functionally  representing of blood  behav-
+iors  in the viscosity  models and  the local hemodynamic environment  are very important  and increases performance of a CFD model. Therefore, there is a need for a viscosity model based on the  internal structures  of  blood. Addi- tionally, there are  some  cautions  in  the evaluation of accu- rate  experimental data for blood  constitutive parameters. The local environment strongly impacts the local  flow pat- terns and hence shear rate. Expressing of accurate envi- ronment is therefore  possibly  essential. However,  assump- tions on the physiological conditions are mandatory}
+
 
 \subsubsection*{Physiological conditons}
 \textit{The cyclic nature  of the  heart  pump creates  pulsatile con-
@@ -711,6 +725,69 @@ ditions in arteries, and therefore blood flow and  pressure are unsteady. The pu
 \textit{Thixotropy must be  considered  in the regions  of  a substantial RBC residual  time  to allow the  separated RBC to  re-aggregate  such as aneurysms and  recir- culation zones}
 
 \textit{Viscoelasticity  and thixotropy  have generally accept- ed  as  less important for high shear  regions. Even  so, there is more need  to develop in this area  for  low shear  regions. Recent  increases in  study on viscoelas- tic models  and its application in literature may be an evidence of this.}
+
+
+
+\newpage
+\subsection{Article Advanced constitutive modeling of the thixotropic elasto-visco-plastic behavior of blood: Description of the model and rheological predictions}
+
+
+\textit{Blood is a complex suspension of red blood cells (RBCs), white blood cells (WBCs) and platelets
+in an aqueous solution, the so-called plasma, containing dissolved proteins [1]. Although many works
+consider blood as a Newtonian fluid [2,3], in fact, it has a pronounced non-Newtonian character,
+mostly explained in terms of the ability of RBCs to aggregate/disaggregate, deform and align to
+flow.}
+
+
+\textit{At \textbf{low shear rates}, blood proteins enhance the formation of a complicated network made up of column-like red cell aggregates known as rouleaux, while at almost stasis, the rouleaux forms three-dimensional networks}
+
+\textit{At \textbf{higher shear rates}, these structures tend to disintegrate, leading to a state where the red blood cells flow separately}
+
+\textit{The physical mechanism that drives the creation of rouleaux is not settled yet but two theories emerge as potential candidates, namely the bridging of fibrinogen [9,10] and the depletion theory. [...] The aforementioned behavior necessitates the use of sophisticated rheological models to capture adequately the rheological response of blood.}
+
+
+\textit{An indicative example is the coagulation process, which initiates the formation of a fibrin network along with the clumping of red blood cells giving rise to enhanced \textbf{elastic aspects}. The latter process becomes of significant importance when clotting of blood occurs [22,23], and the influence upon tissue is much more severe than when only the blood viscosity, which is another significant hemorheological parameter, is increased. It should be mentioned that during the clotting process, the elastic modulus varies with time by many orders of magnitude especially for a diabetic blood}
+
+
+
+\textit{\textbf{Based on our previous discussion, it is perceivable that the rheological characterization of blood
+can be divided in two categories: steady state analysis and transient analysis}}
+
+{\color{blue}
+\textit{\textbf{Blood possesses a distinct property according to which it flows as fluid if subjected to large enough stresses but behaves as a soft matter if the applied stress is below a critical value, giving rise to the experimentally measured blood yield stress [25,26]. The latter is an essential component of its non-Newtonian nature, stemming explicitly from the creation of rouleaux. }Its role is most clearly evaluated under steady-state shear flow conditions} }
+
+
+{\color{blue}
+\textit{\textbf{Additionally, the well-known shear thinning behavior of blood has been described by a plethora of investigations [30,31] in various hemodynamical conditions as well as the existence of a critical hematocrit associated with blood yield stress and the transition from non-Newtonian to Newtonian flow in high shear rates}}}
+
+
+
+{\color{blue}
+\textit{\textbf{However, blood possesses also a non-negligible elastic nature, as shown experimentally [33,34].
+Apparently, this is an inherent property of blood, [35,36] and it can be associated with the lipidic bilayer membrane of RBCs and hemorheological variables such as hematocrit and fibrinogen concentration}}}
+
+
+{\color{red}
+\textit{\textbf{Blood is also classified as a non-ideal yield-stress material due to its non-negligible elastic effect. Thus, the need to introduce the concept of elasto-visco-plastic (EVP) fluids is clear to describe materials that have elastic and plastic characteristics simultaneously.}}}
+
+\textit{Although the findings of the aforementioned investigations are important, the inherent properties
+of blood are strongly time-dependent as well, and thus, blood is categorized as a thixotropic material. From a rheological perspective, blood is one of the most characteristic examples of a thixotropic fluiand allows for the evaluation of generalized thixotropy models for a unique and biologically relevant case. \textbf{A thixotropic fluid is a fluid whose material properties (e.g., viscosity) is a function not only of the applied stress but also of the previous history of motion within the fluid [5,21,24,40,41]. The thixotropic nature of blood stems from the aggregation/disaggregation of rouleaux which is governed by its own time scales affected by the concentration of plasma proteins [42] and hematocrit} }
+
+\textit{Transient blood flow phenomena: 
+\textbf{In particular, the yield stress in dense, soft colloidal suspensions such as blood is typically attributed to an internal structure that develops, deforms, and decays in a way that depends critically not only on the current flow kinematics but also on its deformation history, thus giving rise to thixotropy}}
+
+
+{\color{red}
+\textit{\textbf{The rheological modeling of blood should consider all the above phenomena to predict a realistic
+behavior. Therefore, the focus has been shifting towards constitutive equations that incorporate plasticity, elasticity and thixotropy.}}}
+
+\textit{The model of Owens and coworkers [...] lacks explicit accounting for yield stress, the most important manifestation of the viscoplastic nature of blood}
+
+\textit{dditionally, Anand and Rajagopal [55] used a generalized Oldroyd-B model, which was developed in the context of the general thermodynamic framework of Rajagopal and Srinivasa [56]. They made use of a tensorial viscoelastic model and therefore do not explicitly take into account the viscoplastic nature of blood, although their work was found to agree with steady-state and transient experiments}
+
+
+....
+
 
 \newpage
 \section{Derivation of Navier-Stokes Equation}
@@ -839,7 +916,8 @@ describe the transient rheology of blood
 regarded as a Newtonian fluid to model blood flow in arteries with diameters larger than 100 $\mu$m where measurements of the apparent viscosity show that it ranges from 0.003 to 0.004 Pa.s and the typical Reynolds number is about 0.5 (see Methods of Blood Flow Modelling)}.\newline
 {\color{red} What are our regions of interest?} \newline \textit{"A simple model of a straight rigid blood vessel with unsteady periodic flow is considered. A numerical solution that considers the fully coupled Navier Stokes and energy equations is used for the simulations"}(A review on rheology of non-Newtonian properties of blood) \newline
 {\color{red}Heat transfer?}
-{\color{red} Are we looking for these kind of phenomena?}
+{\color{red} Are we looking for these kind of phenomena?} \newline\newline
+{\color{red}\textbf{QUESTION: Do we want to examine a specific phenomena (e.g aneurysma) s.t. we can focus from the variety of non-newtonian models (shear thinning, plasticity, viscoelasticity, thixotropy, all together, etc.) on a specific group }   }
     \item Rather genereal question:((\textit{"At a macroscopic level, the arterial wall is a complex multi-layer structure which deforms under the action of blood flow. Even though sophisticated constitutive equations have been proposed for the structural behaviour of the vessel wall, its elastic characteristics in vivo are still very difficult to determine and are usually inferred from pulse propagation data. The modelling of the interaction between blood flow and the vessel wall mechanics needs algorithms which correctly describe the energy transfer between them to accurately represent wave propagation phenomena." (Preface Book Cardiovascular mathematics)} \newline
     {\color{red}How far is the development of Trilions FSI-code?} ))
 \end{itemize}
