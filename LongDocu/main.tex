@@ -32,7 +32,7 @@ Done: Started to read book \textit{Cardiovascular mathematics} and different pap
 \begin{enumerate}
 \item Familiarization with the properties and modeling of blood flow
 \item Rheological models for blood - Research on modelling approaches for Non-Newtonian Fluids - In particular which model is suited for blood flow 
-    \item Derivation of Navier-Stokes Equation - How is the assumption for Newtonian fluids integrated (linked with subject 2)?
+    \item Derivation of Navier-Stokes Equation - How is the assumption for Newtonian fluids integrated (linked with subject 2)
 \end{enumerate}
 
 \section{Familiarization with the properties and modeling of blood flow}
@@ -800,9 +800,14 @@ have that [P]= N/$m^2$ and [$\mu$]= kg/ms. The viscosity may vary, for example i
 \begin{enumerate}
     \item In certain regions (e.g. low shear regions: e.g. near bifurcations, graft anastomoses, stenoses, and  aneurysm) the Non-Newtonian behaviour of blood shound not be neglected and integrated into the model equation
     \item Hemorheology is characterized by 
-four non-Newtonian characteristics - a a) shear thinning viscosity, b) a general viscoelastic response to transient flow deformations and a c) non-zero yieldstress with d) associated
-thixotropy
-    \item Starting point for the flow analysis is in a macroscopic viewpoint the continuity equation and momentum equations
+four non-Newtonian characteristics 
+\begin{enumerate}
+ \item a \textbf{shear thinning viscosity}
+ \item a general \textbf{viscoelastic} response to transient flow deformations and 
+ \item a \textbf{non-zero yieldstress} with
+ \item associated \textbf{thixotropy}
+\end{enumerate}
+    \item Starting point for the flow analysis is in a macroscopic viewpoint the continuity equation and momentum equation
     \item In order to account for Non-Newtonian effects, we can\begin{enumerate}
         \item use linear elastic constitutive equation to close system and make the viscosity dependent of the deformation rate tensor (Generalized non-Newtonian equations e.g. Power law)
         \item use a (nonlinear) viscoelastic constitutive equation $\Rightarrow$ more complex constitutive equations must be solved simultaneously along with the equations of conservation of mass and momentum.
@@ -833,8 +838,8 @@ regarded as a Newtonian fluid to model blood flow in arteries with diameters lar
 {\color{red} What are our regions of interest?} \newline \textit{"A simple model of a straight rigid blood vessel with unsteady periodic flow is considered. A numerical solution that considers the fully coupled Navier Stokes and energy equations is used for the simulations"}(A review on rheology of non-Newtonian properties of blood) \newline
 {\color{red}Heat transfer?}
 {\color{red} Are we looking for these kind of phenomena?}
-    \item ((\textit{"At a macroscopic level, the arterial wall is a complex multi-layer structure which deforms under the action of blood flow. Even though sophisticated constitutive equations have been proposed for the structural behaviour of the vessel wall, its elastic characteristics in vivo are still very difficult to determine and are usually inferred from pulse propagation data. The modelling of the interaction between blood flow and the vessel wall mechanics needs algorithms which correctly describe the energy transfer between them to accurately represent wave propagation phenomena." (Preface Book Cardiovascular mathematics)} \newline
-    {\color{red}Trilions FSI-code is sufficient to describe this accurately?} ))
+    \item Rather genereal queation:((\textit{"At a macroscopic level, the arterial wall is a complex multi-layer structure which deforms under the action of blood flow. Even though sophisticated constitutive equations have been proposed for the structural behaviour of the vessel wall, its elastic characteristics in vivo are still very difficult to determine and are usually inferred from pulse propagation data. The modelling of the interaction between blood flow and the vessel wall mechanics needs algorithms which correctly describe the energy transfer between them to accurately represent wave propagation phenomena." (Preface Book Cardiovascular mathematics)} \newline
+    {\color{red}How far is the development of Trilions FSI-code?} ))
 \end{itemize}
 
 \end{document}
