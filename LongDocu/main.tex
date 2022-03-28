@@ -1,3 +1,7 @@
+
+
+
+
 %%% Research Diary - Entry
 %%% Template by Mikhail Klassen, April 2013
 %%% 
@@ -10,6 +14,7 @@
 % To add your univeristy logo to the upper right, simply
 % upload a file named "logo.png" using the files menu above.
 
+\usepackage{natbib}
 
 % Add packages
 \usepackage{physics}
@@ -1316,10 +1321,72 @@ have that [P]= N/$m^2$ and [$\mu$]= kg/ms. The viscosity may vary, for example i
 \subsection*{Overview Non-Newtonian Properties of Blood
 }
 
+\begin{enumerate}
+\item Whole blood consists of formed elements that are suspended in plasma. The majority of the formed elements are red blood cells (RBCs) as a result they are important components in determining the flow characteristics of blood. At low shear rates, that is, values less than 100 s-1, the RBCs aggregate and form rouleaux. Rouleaux aggregation disperses as the shear rate increases, reducing the viscosity of blood. The resulting shear-thinning behavior caused by rouleaux disaggregations in blood plasma is the principal cause of the non-Newtonian behavior of blood. However, with further increment of the shear rate beyond the low shear rate region, the shear-thinning characteristics disappear and blood demonstrates Newtonian behavior \cite{Shibeshi2005_Carreau}
+\item Besides the influence of cellular components in plasma flow conditions, the size of the flow domain impacts the shear-thinning behavior of blood. Both in medium and large size arteries, non-Newtonian viscosity influence hemodynamics factors. In some capillaries, small vessels with a diameter close to the size of cells, the non-Newtonian property of blood is more predominant \cite{Shibeshi2005_Carreau}
+\item \textbf{Case of study conditions (e.g. the flow rate and geometry) must also be considered for determining the shear region under investigation and then decided the appropriate viscosity model for own studies} \cite{FuatYilmazandMehmetYasarGundogdu2008_largetable}
+\end{enumerate}
+
 
 \newpage
 \subsection*{Overview Non-Newtonian Models
 }
+
+REMEMBER: Since such models do not include the dynamics of the cells they
+may over estimate the transport behaviors which are a result of cell-cell collisions within
+whole blood suspensions. This may lead to an invalid description of particle diffusivities within whole
+blood.
+\subsubsection*{Linear elastic constitutive equations (time independent)}
+\renewcommand*{\arraystretch}{1.8}
+\begin{table}[htbp]
+\centering
+\begin{tabular}{p{2.5cm}p{6cm}p{6cm}p{1.5cm}}
+\toprule
+Model & Formula & Caputured behaviour & Literature \\
+\midrule
+\textbf{Power Law} & $  \eta = k \Dot{\gamma}^{n-1}$ &  For $n<1$ shear thinning behaviour + possible to obtain
+numerous analytical solutions, - zero shear rate behaviours are
+unphysical, - the
+asymptotic limit as shear rate goes to infinity is zero \textbf{It does not describe the low
+and high shear rate regions} & 
+\cite{AdeliaSequeira2017} \\
+\textbf{Power-law model from Walburn and Schneck} & $  \eta = k \Dot{\gamma}^{n-1}$\hfill  , $k=C_1exp(C_2H_t)$ \hfill, $n=1-C_3H_t$ & Dependence of the viscosity
+on the haematocrit and total fibrinogen and globulins proteins, TPMA, \textbf{was developed for low shear rates, however, and was not valid
+for certain shear rate regimes seen in their pulsatile flow simulations} & 
+\cite{Robertson2009_cardiovascular} \\
+\textbf{General form }  &$  \mu(\Dot{\gamma})=\mu_{\infty}+(\mu_0 - \mu{\infty})F(\Dot{\gamma})$ \hfill or $     \frac{\mu(\Dot{\gamma})- \mu_{\infty} }{\mu_0 - \mu{\infty}}= F(
+\Dot{\gamma})$ & Viscosity functions with bounded and non-zero limiting values of viscosity, $(\mu_0$ and $\mu{\infty})$ are the asymptotic viscosity values at zero and infinite shear rates and $F(\Dot{\gamma})$ is a shear dependent function, satisfying the natural limit condition, i.e. goes to 1 for strain rate to zero and goes to 0 if strain rate goes to infinity  & \cite{Bessonov2016_MethodsBloodFlow} \\
+\textbf{Carreau}  &$F(\Dot{\gamma})= (1+(\lambda\Dot{\gamma})^2)^{\frac{n-1}{2}}$ & were seen to agree well in their predictions and were preferred over the power-law model which has an unbounded viscosity at zero shear-rate &\cite{Shibeshi2005_Carreau}\\ 
+\textbf{Carreau-Yasuda}  & $(1+(\lambda\Dot{\gamma})^a)^{\frac{n-1}{a}}$ & velocity shows a flattened profile (larger region of higher velocity), reaching a lower
+maximum value & \cite{Robertson2009_cardiovascular}\\
+\bottomrule
+\end{tabular}
+\caption[Tabelle]{Material constants with $\mu_0$ = 0.056Pa.s, $\mu_{\infty}$ = 0.00345Pa.s}
+\label{tab:toll1}
+\end{table}
+
+
+
+
+\renewcommand*{\arraystretch}{1.8}
+\begin{table}[htbp]
+\centering
+\begin{tabular}{p{2.5cm}p{6cm}p{6cm}p{1.5cm}}
+\toprule
+Model & Formula & Caputured behaviour & Literature \\
+\midrule
+\textbf{Powell-Eyring} & $\frac{sinh{^-1}(\lambda\Dot{\gamma})}{\lambda\Dot{\gamma}}$ & $\lambda=5.383s$\\
+\textbf{Cross}  & $\frac{1}{1+(\lambda\Dot{\gamma})^m}$ & $\lambda=1.007s, m = 1.028$\\
+\bottomrule
+\end{tabular}
+\caption[Tabelle]{Material constants with $\mu_0$ = 0.056Pa.s, $\mu_{\infty}$ = 0.00345Pa.s}
+\label{tab:toll1}
+\end{table}
+
+%\textbf{Powell-Eyring} & $\frac{sinh{^-1}(\lambda\Dot{\gamma})}{\lambda\Dot{\gamma}}$ & $\lambda=5.383s$\\
+%\textbf{Cross}  & $\frac{1}{1+(\lambda\Dot{\gamma})^m}$ & $\lambda=1.007s, m = 1.028$\\
+%\textbf{Modified Cross}  & $\frac{1}{1+((\lambda\Dot{\gamma})^m)^a}$ & $\lambda=3.736s, m = 2.406, a =0.254$ \\
+
 
 
 \newpage
@@ -1350,6 +1417,7 @@ and can predict non-shear components of the stress tensor. However, they are typ
 blood demonstrates associated with the structural evolution.
 \item Thixotropic models to
 describe the transient rheology of blood
+\item In context of linear elastic constitutive equation (i.e. Power law, Cassons, Carreau): none of the hemorheological models are agreeable in the whole shear rate ranges. This indicates the fact that the rheological characteristic of blood is an intricate property and it has been a difficult task to obtain a well-defined universal model. The complexity is resulted from the diversity as well as the shear dependent deformation of the constituents. This nature of blood makes both experimental and theoretical works a formidable task to get a universal model.
 \end{enumerate}
 
 
@@ -1374,5 +1442,9 @@ regarded as a Newtonian fluid to model blood flow in arteries with diameters lar
     \item Rather genereal question:((\textit{"At a macroscopic level, the arterial wall is a complex multi-layer structure which deforms under the action of blood flow. Even though sophisticated constitutive equations have been proposed for the structural behaviour of the vessel wall, its elastic characteristics in vivo are still very difficult to determine and are usually inferred from pulse propagation data. The modelling of the interaction between blood flow and the vessel wall mechanics needs algorithms which correctly describe the energy transfer between them to accurately represent wave propagation phenomena." (Preface Book Cardiovascular mathematics)} \newline
     {\color{red}How far is the development of Trilions FSI-code?} ))
 \end{itemize}
+
+\bibliographystyle{plain}
+\bibliography{nat}
+
 
 \end{document}

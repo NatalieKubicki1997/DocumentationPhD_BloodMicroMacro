@@ -1,0 +1,3 @@
+\beamer@sectionintoc {1}{Familiarization with properties and modeling of Blood Flow}{3}{0}{1}
+\beamer@sectionintoc {2}{Derivation of Navier-Stokes Equation from classical mechanics}{7}{0}{2}
+\beamer@sectionintoc {3}{Rheological Non-Newtonian models for blood}{11}{0}{3}
