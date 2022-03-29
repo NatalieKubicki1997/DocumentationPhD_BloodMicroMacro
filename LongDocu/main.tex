@@ -1336,7 +1336,7 @@ REMEMBER: Since such models do not include the dynamics of the cells they
 may over estimate the transport behaviors which are a result of cell-cell collisions within
 whole blood suspensions. This may lead to an invalid description of particle diffusivities within whole
 blood.
-\subsubsection*{Linear elastic constitutive equations (time independent)}
+\subsubsection*{time-independent constitutive equations }
 \renewcommand*{\arraystretch}{1.8}
 \begin{table}[htbp]
 \centering
@@ -1359,6 +1359,7 @@ for certain shear rate regimes seen in their pulsatile flow simulations} &
 \textbf{Carreau}  &$F(\Dot{\gamma})= (1+(\lambda\Dot{\gamma})^2)^{\frac{n-1}{2}}$ & were seen to agree well in their predictions and were preferred over the power-law model which has an unbounded viscosity at zero shear-rate &\cite{Shibeshi2005_Carreau}\\ 
 \textbf{Carreau-Yasuda}  & $(1+(\lambda\Dot{\gamma})^a)^{\frac{n-1}{a}}$ & velocity shows a flattened profile (larger region of higher velocity), reaching a lower
 maximum value & \cite{Robertson2009_cardiovascular}\\
+...  & ... & ... & ...\\
 \bottomrule
 \end{tabular}
 \caption[Tabelle]{Material constants with $\mu_0$ = 0.056Pa.s, $\mu_{\infty}$ = 0.00345Pa.s}
@@ -1368,20 +1369,13 @@ maximum value & \cite{Robertson2009_cardiovascular}\\
 
 
 
-\renewcommand*{\arraystretch}{1.8}
-\begin{table}[htbp]
-\centering
-\begin{tabular}{p{2.5cm}p{6cm}p{6cm}p{1.5cm}}
-\toprule
-Model & Formula & Caputured behaviour & Literature \\
-\midrule
-\textbf{Powell-Eyring} & $\frac{sinh{^-1}(\lambda\Dot{\gamma})}{\lambda\Dot{\gamma}}$ & $\lambda=5.383s$\\
-\textbf{Cross}  & $\frac{1}{1+(\lambda\Dot{\gamma})^m}$ & $\lambda=1.007s, m = 1.028$\\
-\bottomrule
-\end{tabular}
-\caption[Tabelle]{Material constants with $\mu_0$ = 0.056Pa.s, $\mu_{\infty}$ = 0.00345Pa.s}
-\label{tab:toll1}
-\end{table}
+....
+{\color{red} \textbf{FOR VERY DETAILED TABLE SEE A critical review on blood flow in large arteries; relevance to blood rheology, viscosity models and physiologic conditions \cite{FuatYilmazandMehmetYasarGundogdu2008_largetable} }}
+
+\begin{itemize}
+\item While e.g. the Power-law model, Carreau model are representative rheologically admissible constitutive equations with shear thinning viscosity, the Casson model is a representative yield stress fluid
+\end{itemize}
+
 
 %\textbf{Powell-Eyring} & $\frac{sinh{^-1}(\lambda\Dot{\gamma})}{\lambda\Dot{\gamma}}$ & $\lambda=5.383s$\\
 %\textbf{Cross}  & $\frac{1}{1+(\lambda\Dot{\gamma})^m}$ & $\lambda=1.007s, m = 1.028$\\
@@ -1403,13 +1397,15 @@ four non-Newtonian characteristics
 \end{enumerate}
     \item Starting point for the flow analysis is in a macroscopic viewpoint the continuity equation and momentum equation
     \item In order to account for Non-Newtonian effects, we can\begin{enumerate}
-        \item use linear elastic constitutive equation to close system and make the viscosity dependent of the deformation rate tensor (Generalized non-Newtonian equations e.g. Power law)
+        \item use time-independent constitutive equation to close system and make the viscosity dependent of the deformation rate tensor (Generalized non-Newtonian equations e.g. Power law)
         \item use a (nonlinear) viscoelastic constitutive equation $\Rightarrow$ more complex constitutive equations must be solved simultaneously along with the equations of conservation of mass and momentum.
     \end{enumerate}  
 \item  Generalized non-Newtonian equations can capture a) shear thinning and c) yield stress. They are computationally inexpensive
 to implement but cannot predict accurately transient (thixotropic/
 hysteretic) changes in the viscosity which are relevant as blood
-flows naturally under pulsatile conditions.
+flows naturally under pulsatile conditions. Extra: However,  blood exhibits both viscous and elastic  properties under pulsatile flow. Viscosity 
+is  an  assessment  of the rate of energy dissipation due to cell 
+deformation and sliding, while elasticity is an assessment of  the elastic  storage of  energy  primarily due to kinetic deformability of the RBCs (Thurston  et al., 2004). 
 \item To better account for
 the transient effects, a viscoelastic model can be used. 
 Viscoelastic models can account for elasticity in the sample
@@ -1417,7 +1413,7 @@ and can predict non-shear components of the stress tensor. However, they are typ
 blood demonstrates associated with the structural evolution.
 \item Thixotropic models to
 describe the transient rheology of blood
-\item In context of linear elastic constitutive equation (i.e. Power law, Cassons, Carreau): none of the hemorheological models are agreeable in the whole shear rate ranges. This indicates the fact that the rheological characteristic of blood is an intricate property and it has been a difficult task to obtain a well-defined universal model. The complexity is resulted from the diversity as well as the shear dependent deformation of the constituents. This nature of blood makes both experimental and theoretical works a formidable task to get a universal model.
+\item In context of time-independent constitutive equation (i.e. Power law, Cassons, Carreau): none of the hemorheological models are agreeable in the whole shear rate ranges. This indicates the fact that the rheological characteristic of blood is an intricate property and it has been a difficult task to obtain a well-defined universal model. The complexity is resulted from the diversity as well as the shear dependent deformation of the constituents. This nature of blood makes both experimental and theoretical works a formidable task to get a universal model.
 \end{enumerate}
 
 

@@ -1,5 +1,9 @@
 \begin{thebibliography}{1}
 
+\bibitem{Shibeshi2005_Carreau}
+{The Rheology of Blood Flow in a Branched Arterial System NIH Public Access}.
+\newblock {\em Appl Rheol}, 15(6):398--405, 2005.
+
 \bibitem{AdeliaSequeira2017}
 Jo{\~{a}}o~Janela {Ad{\'{e}}lia Sequeira}.
 \newblock {An Overview of Some Mathematical Models of Blood Rheology}.
@@ -9,6 +13,11 @@ Jo{\~{a}}o~Janela {Ad{\'{e}}lia Sequeira}.
 N.~Bessonov, A.~Sequeira, S.~Simakov, Yu~Vassilevskii, and V.~Volpert.
 \newblock {Methods of Blood Flow Modelling}.
 \newblock {\em Mathematical Modelling of Natural Phenomena}, 11(1):1--25, 2016.
+
+\bibitem{FuatYilmazandMehmetYasarGundogdu2008_largetable}
+{Fuat Yilmaz and Mehmet Yasar Gundogdu}.
+\newblock {A critical review on blood flow in large arteries; relevance to
+  blood rheology, viscosity models and physiologic conditions}, 2008.
 
 \bibitem{Robertson2009_cardiovascular}
 Anne~M Robertson and Robert~G Owens.

@@ -143,7 +143,7 @@ in a liquid known as plasma ($\approx$ 55\% of blood volume)
 	    \begin{itemize}
 	        \item        Classical Mechanics
 			    $\Rightarrow$ Continuum hypothesis!
-			    \item Starting point are mass and momentum conservation for incompressible fluid ($\rho \approx \text{const}$) 
+			    \item Starting point are mass and momentum conservation for incompressible fluids ($\rho \approx \text{const}$) and a constitutive equation, which describes material behaviour 
 	    \begin{enumerate}
 			    \item \begin{equation*}
 			         \nabla \cdot \bm{u} = 0
@@ -151,8 +151,9 @@ in a liquid known as plasma ($\approx$ 55\% of blood volume)
 			      \item \begin{equation*}
 			         \rho  \frac{\partial \bm{u}}{\partial t} + \rho (\bm{u} \cdot \nabla) \bm{u} =  \nabla \cdot \bm{\sigma} + \rho\bm{f}
 			    \end{equation*}
+			    \item \begin{equation*}\bm{\sigma} = \underbrace{-p\bm{I} }_{\text{volumetric stress tensor}} + \underbrace{\bm{\tau}   }_{\text{deviatoric stress tensor}} \end{equation*}
 			    \end{enumerate}	
-			    \vspace{5pt}
+			 
 			    \item Newtonian assumption i.e. $
     \bm{\sigma} = \bm{\sigma}(\grad\bm{u},p)= -p\bm{I} +2\eta\bm{D}(\grad\bm{u})= -p\bm{I} + \eta(\grad\bm{u}+\grad\bm{u}^T)$
     with $\eta = \text{const}$ leads to well-known Navier-Stokes Equation
@@ -203,8 +204,8 @@ like downstream a stenosis or inside a saccular aneurysm
 		\begin{itemize}
 			\item In order to account for Non-Newtonian effects, we can
 			\begin{enumerate}
-				\item use \textbf{linear elastic constitutive equation} to close system and make the viscosity dependent of the
-deformation rate tensor (time-independent models)
+				\item use \textbf{time-independent constitutive equation} to close system and make the viscosity dependent of the
+deformation rate tensor 
 				\item use a (nonlinear) \textbf{viscoelastic constitutive equation} $\Rightarrow$ more complex constitutive equations
 must be solved simultaneously along with the equations of conservation of mass and momentum (time dependent models)
 \end{enumerate}
@@ -215,7 +216,7 @@ must be solved simultaneously along with the equations of conservation of mass a
 	\end{frame}
 	
 	
-		\begin{frame}{Linear elastic constitutive equation (time independent)}
+		\begin{frame}{time-independent constitutive equation }
 		\begin{itemize}
 			\item Express the viscosity
 as function of the strain rate $\Rightarrow$ Generalised Newtonian Model 
