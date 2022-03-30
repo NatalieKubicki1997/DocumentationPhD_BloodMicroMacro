@@ -88,14 +88,14 @@ in a liquid known as plasma ($\approx$ 55\% of blood volume)
 			    \begin{itemize}
 			      	\item Non-Newtonian characteristics occur due to: \begin{itemize}
     	    \item Aggregation of RBC's at low shear rates (Rouleaux formation)
-    	    \item Thixotropic behaviour due to finite time needed for RBC aggregation and disaggregation.
+    	    \item Thixotropic behaviour due to finite time required for RBC aggregation and disaggregation.
     	    \item Deformability of RBC and their tendency to align with flow field at high shear rates
     	\end{itemize}
     	\end{itemize}
 			            \begin{table}[h]
     		\centering
     		\begin{tabular}{p{5cm}p{5cm}}
-    			Low shear rates $\approx \hspace{5pt}< 1 \frac{1}{s}$ & High shear rates $\approx\hspace{5pt} > 400 \frac{1}{s}$ \\
+    			Low shear rates $\approx \hspace{5pt}< 1-100 \frac{1}{s}$ & High shear rates $\approx\hspace{5pt} > 400 \frac{1}{s}$ \\
     			\hline
     			apparent viscosity increases & apparent viscosity decreases \\
     		 yield stress & RBC's rotate \& accomadate flow\\
@@ -155,7 +155,7 @@ in a liquid known as plasma ($\approx$ 55\% of blood volume)
 			    \end{enumerate}	
 			 
 			    \item Newtonian assumption i.e. $
-    \bm{\sigma} = \bm{\sigma}(\grad\bm{u},p)= -p\bm{I} +2\eta\bm{D}(\grad\bm{u})= -p\bm{I} + \eta(\grad\bm{u}+\grad\bm{u}^T)$
+    \bm{\sigma} = \bm{\sigma}(\grad\bm{u},p)= -p\bm{I} +2\eta\bm{D}(\grad\bm{u})= -p\bm{I} + \eta(\grad\bm{u}+(\grad\bm{u})^T)$
     with $\eta = \text{const}$ leads to well-known Navier-Stokes Equation
 	    \end{itemize}
 		    \end{frame}
@@ -206,8 +206,8 @@ like downstream a stenosis or inside a saccular aneurysm
 			\begin{enumerate}
 				\item use \textbf{time-independent constitutive equation} to close system and make the viscosity dependent of the
 deformation rate tensor 
-				\item use a (nonlinear) \textbf{viscoelastic constitutive equation} $\Rightarrow$ more complex constitutive equations
-must be solved simultaneously along with the equations of conservation of mass and momentum (time dependent models)
+				\item use \textbf{time-dependent models} i.e. a (nonlinear) viscoelastic constitutive equation or thixotropic models $\Rightarrow$ more complex constitutive equations
+must be solved simultaneously along with the equations of conservation of mass and momentum 
 \end{enumerate}
 		\end{itemize}
 		
@@ -216,27 +216,37 @@ must be solved simultaneously along with the equations of conservation of mass a
 	\end{frame}
 	
 	
-		\begin{frame}{time-independent constitutive equation }
+		\begin{frame}{Time-independent constitutive equation }
 		\begin{itemize}
 			\item Express the viscosity
 as function of the strain rate $\Rightarrow$ Generalised Newtonian Model 
 			\begin{equation}
 			    \bm{\sigma} = \bm{\sigma}(\grad\bm{u},p)= -p\bm{I} +2\eta(\Dot{\gamma})\hspace{5pt} \bm{D}(\grad\bm{u})
 			\end{equation}
-			\item Examples are e.g. Power law model $\eta= k\Dot{\gamma}^{n-1}$, Extension of the power-law model from Walburn and Schneck (considered the dependence of $\eta$
-on the haematocrit and total protein minus albumin content), Cassons equation (account for yield stress)  ...
+			with $\Dot{\gamma} = \sqrt[]{2\bm{D} \hspace{2pt}\bm{:} \hspace{2pt}\bm{D} }$
+			\item Examples are e.g. Power law model $\eta= k\Dot{\gamma}^{n-1}$, Extension of power-law model from Walburn and Schneck (considered dependence of $\eta$
+on haematocrit and TPMA content), Cassons equation (account for yield stress)  ...
 			\item Computationally inexpensive to implement but cannot predict accurately
 transient changes which are relevant as blood flows naturally under pulsatile conditions $\Rightarrow
-$ viscoelastic model
-		\end{itemize}
-		
+$ time-dependent models
+		\end{itemize}	
 	\end{frame}
 
-	\begin{frame}{Viscoelastic constitutive equation (time-dependent)}
+
+\begin{frame}
+\textit{While exhibiting shear-dependent viscosity these fluids are essentially Newtonian in the following aspects: the structure of the stress tensor of generalized Newtonian fluids in a particular flow is the same as in their Newtonian counterparts, and their velocity fields adjust instantaneously to changes in stresses. Many complex fluids behave quite differently. One of the key features of viscoelastic fluids is the presence of memory; stresses in such fluids depend on the flow history. Another is stress anisotropy. Generally, a viscoelastic fluid generates stresses that are absent in a Newtonian fluid subjected to the same deformation history} (Morozov, Alexander and Spagnolie, Saverio E., 2015)
+\end{frame}
+
+
+	\begin{frame}{Time-dependent constitutive equation}
 		\begin{itemize}
-		\item Split stress tensor approach: Decompose total stress tensor into its non-Newtonian (RBC influence) and Newtonian (plasma) parts 
-			\item Different models (Maxwell model, Oldroyd-B model ...) considering e.g. viscoelasticity, viscoelasticity + yield stress, thixotropic elasto-visco-plastic behavior of blood ...
-			\item We get additional equations (e.g. ODE's) to solve for
+			\item Regarding Viscoelasticity: Different models to account for elastic effects e.g.
+			\begin{itemize}
+			\item Maxwell model (based on spring-dashpot analogy)
+			\item Oldroyd-B model (split stress tensor approach: Decompose total stress tensor into its non-Newtonian (RBC influence) and Newtonian (plasma) parts)
+\end{itemize}			 
+\item Different complexities of models e.g. considering viscoelasticity, thixotropy, thixotropic elasto-visco-plastic behavior of blood  ...
+			\item We get additional equations (PDE/ODE) to solve for
 		\end{itemize}
 		
 	\end{frame}

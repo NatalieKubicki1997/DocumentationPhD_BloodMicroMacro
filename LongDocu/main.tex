@@ -1297,6 +1297,11 @@ arbitrary shape. Yet it takes time to fill it. And oil takes more time than wate
 As in one of the videos the strain rate tensor corrsponds to the symmetric part of velocity gradient tensor
 \textit{\textbf{In a fluid then  the cauchy stress tensor is a function of $\bm{D}$, while it is independent of  deformation gradient $\bm{F}$. A consequence is that the reference configuration is a concept useful for the derivation of the equations, yet it does not play any particular role for a fluid. Intermediate behaviours, like that of visco-elastic fluids, for instance, are possible; they will be addressed in detail in Chapter 6.} The relation between the Cauchy stress tensor $\bm{\sigma}$ and the kinematic quantities is called constitutive relation, or constitutive law, and is a characteristic of the type of material under consideration. To be physically correct, a constitutive relation must obey certain rules, like the principle of material frame indifference [512] which states that the relation should be invariant under a change of frame of reference.}(Chapter 3)
 
+
+\textit{ In a classical elastic
+solid the stress tensor depends locally on the material deformation; in a classical
+viscous fluid the stress tensor depends locally on the rate of material deformation.\cite{Morozov2015_nonnewtonian}}
+
 \subsubsection*{Newtonian and Non-Newtonian}
 \textit{ In a Newtonian incompressible fluid (this is a limitation usually accepted for blood flow in large arteries), the Cauchy stress tensor depends
 linearly on the strain rate. More precisely, we have \begin{equation}
@@ -1358,7 +1363,7 @@ for certain shear rate regimes seen in their pulsatile flow simulations} &
 \Dot{\gamma})$ & Viscosity functions with bounded and non-zero limiting values of viscosity, $(\mu_0$ and $\mu{\infty})$ are the asymptotic viscosity values at zero and infinite shear rates and $F(\Dot{\gamma})$ is a shear dependent function, satisfying the natural limit condition, i.e. goes to 1 for strain rate to zero and goes to 0 if strain rate goes to infinity  & \cite{Bessonov2016_MethodsBloodFlow} \\
 \textbf{Carreau}  &$F(\Dot{\gamma})= (1+(\lambda\Dot{\gamma})^2)^{\frac{n-1}{2}}$ & were seen to agree well in their predictions and were preferred over the power-law model which has an unbounded viscosity at zero shear-rate &\cite{Shibeshi2005_Carreau}\\ 
 \textbf{Carreau-Yasuda}  & $(1+(\lambda\Dot{\gamma})^a)^{\frac{n-1}{a}}$ & velocity shows a flattened profile (larger region of higher velocity), reaching a lower
-maximum value & \cite{Robertson2009_cardiovascular}\\
+maximum value & \cite{Robertson2009_cardiovascular}\cite{Morozov2015_nonnewtonian} !!!\\
 ...  & ... & ... & ...\\
 \bottomrule
 \end{tabular}
@@ -1373,7 +1378,17 @@ maximum value & \cite{Robertson2009_cardiovascular}\\
 {\color{red} \textbf{FOR VERY DETAILED TABLE SEE A critical review on blood flow in large arteries; relevance to blood rheology, viscosity models and physiologic conditions \cite{FuatYilmazandMehmetYasarGundogdu2008_largetable} }}
 
 \begin{itemize}
+\item A generalized Newtonian fluid is a phenomenological model that assumes that the applied flow only changes the dissipation rate in the fluid (i.e., its viscosity), but does not change the tensorial structure of the Newtonian constitutive model \cite{Morozov2015_nonnewtonian} \begin{equation}
+\bm{\sigma} = -p\bm{I} + \eta(\Dot{\gamma})\Dot{\gamma} 
+\end{equation}
+Note that the local viscosity $\eta$ can only depend on the invariants of the tensor, otherwise a similarity transform (a change
+of coordinate system) could change the value of the viscosity, which is unphysical.
 \item While e.g. the Power-law model, Carreau model are representative rheologically admissible constitutive equations with shear thinning viscosity, the Casson model is a representative yield stress fluid
+\item the generalized Newtonian fluid model, a simple extension of the linear relation between the stress and velocity gradient in the classical Newtonian constitutive law. While exhibiting shear-dependent viscosity these fluids are essentially Newtonian in the following aspects: the structure of the stress tensor of generalized Newtonian fluids in a particular flow is the same as in their Newtonian counterparts, and their velocity fields adjust instantaneously to changes in stresses
+\item Many complex fluids behave quite differently. One of the key features of viscoelastic fluids is the presence of memory; stresses in such fluids depend on the flow history. Another is stress anisotropy. Generally, a viscoelastic fluid generates stresses that are absent in a Newtonian fluid subjected to the same deformation history. The consequences of these features are dramatic: viscoelasticfluids do not
+flow like their Newtonian counterparts. In this section, we develop a mathematical framework that will allow us to incorporate memory and stress anisotropy into constitutive equations for viscoelastic fluids. Unfortunately, there is no single model that describes all viscoelastic fluids similar to the Navier-Stokes equations for Newtonian flows. Instead, one usually chooses a model that is known to describe a particular type of fluid microstructure in a particular type of flow
+\item there is no unique equation that describes viscoelastic
+polymer solutions similar to the Navier–Stokes equation for Newtonian fluids.
 \end{itemize}
 
 
@@ -1439,6 +1454,7 @@ regarded as a Newtonian fluid to model blood flow in arteries with diameters lar
     {\color{red}How far is the development of Trilions FSI-code?} ))
 \end{itemize}
 
+\newpage
 \bibliographystyle{plain}
 \bibliography{nat}
 
